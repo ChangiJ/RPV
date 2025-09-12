@@ -548,6 +548,26 @@ void getSyst(small_tree_rpv &tree, TString variations, TString year, TFile *f, T
     std::cout << "Reweight c jets by " << cflavorValCentral << " +/ " << cflavorValError << std::endl;
     std::cout << "Reweight l jets by " << lflavorValCentral << " +/ " << lflavorValError << std::endl;
   }
+  //
+  float f_modify_sig_xsec = 0.;
+  if(procname.Contains("signal")) {
+    if(procname=="signal_M1000") f_modify_sig_xsec=0.3942/0.385E+00;
+    else if(procname=="signal_M1100") f_modify_sig_xsec=0.1972/0.191E+00;
+    else if(procname=="signal_M1200") f_modify_sig_xsec=0.1024/0.985E-01;
+    else if(procname=="signal_M1300") f_modify_sig_xsec=0.05486/0.522E-01;
+    else if(procname=="signal_M1400") f_modify_sig_xsec=0.03018/0.284E-01;
+    else if(procname=="signal_M1500") f_modify_sig_xsec=0.01697/0.157E-01;
+    else if(procname=="signal_M1600") f_modify_sig_xsec=0.00972/0.887E-02;
+    else if(procname=="signal_M1700") f_modify_sig_xsec=0.005662/0.507E-02;
+    else if(procname=="signal_M1800") f_modify_sig_xsec=0.003349/0.293E-02;
+    else if(procname=="signal_M1900") f_modify_sig_xsec=0.002004/0.171E-02;
+    else if(procname=="signal_M2000") f_modify_sig_xsec=0.001216/0.101E-02;
+    else if(procname=="signal_M2100") f_modify_sig_xsec=0.0007439/0.598E-03;
+    else if(procname=="signal_M2200") f_modify_sig_xsec=0.0004607/0.356E-03;
+    
+    cout << "f_modify_sig_xsec = " << f_modify_sig_xsec << endl;
+  }
+
   // Get GS weights 
   std::vector<double> gs_dmc={1,1,1,1};
   std::vector<double> gs_dmc_err={0,0,0,0};
@@ -786,6 +806,7 @@ void getSyst(small_tree_rpv &tree, TString variations, TString year, TFile *f, T
     */
     if (procname=="data_obs" && (year=="UL2016_preVFP"||year=="UL2016_postVFP"||year=="UL2016")) nominalweight = tree.pass() * (tree.trig_ht900()||tree.trig_jet450());
     else if (procname=="data_obs") nominalweight = tree.pass() * tree.trig_ht1050(); // rereco // 2017 and 2018
+    if (procname.Contains("signal")) nominalweight = lumi*tree.weight()*tree.pass()*f_modify_sig_xsec;
 /*
     int nb_csv=0;
     for(unsigned int j=0; j<tree.jets_hflavor().size();j++){
