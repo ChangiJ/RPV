@@ -100,13 +100,13 @@ int main(int argc, char *argv[]){
   }
 
   string extraweight = "1";
-  Samples.push_back(sfeats(s_rpv_m1800, "m1800", kRed, 1, cutandweight("pass",extraweight)));
+  Samples.push_back(sfeats(s_rpv_m1800, "m1800", TColor::GetColor("#bd1f01"), 1, cutandweight("pass",extraweight)));
   Samples.back().isSig = true;
   
-  Samples.push_back(sfeats(s_qcd,   "QCD", 	rpv::c_qcd, 	1, cutandweight("pass","1.")));
-  Samples.push_back(sfeats(s_wjets, "W+ jets",  rpv::c_wjets, 	1, cutandweight("pass","1.")));
-  Samples.push_back(sfeats(s_ttbar, "t#bar{t}", rpv::c_tt, 	1, cutandweight("pass","1.")));
-  Samples.push_back(sfeats(s_other, "Others", 	rpv::c_other, 	1, cutandweight("pass","1.")));// */
+  Samples.push_back(sfeats(s_qcd,   "QCD", 	TColor::GetColor("#ffa90e"), 	1, cutandweight("pass","1.")));
+  Samples.push_back(sfeats(s_wjets, "W+ jets",  TColor::GetColor("#832db6"), 	1, cutandweight("pass","1.")));
+  Samples.push_back(sfeats(s_ttbar, "t#bar{t}", TColor::GetColor("#3f90da"), 	1, cutandweight("pass","1.")));
+  Samples.push_back(sfeats(s_other, "Others", 	TColor::GetColor("#94a4a2"), 	1, cutandweight("pass","1.")));// */
 												   //
   //Samples.push_back(sfeats(s_qcd,   "QCD", 	rpv::c_qcd, 	1, cutandweight("pass",extraweight)));
   //Samples.push_back(sfeats(s_wjets, "W+ jets",  rpv::c_wjets, 	1, cutandweight("pass",extraweight)));

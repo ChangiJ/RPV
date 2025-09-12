@@ -101,36 +101,36 @@ int main(int argc, char *argv[])
 		"",//20
 		"",
 		// Njets-Nb basis
-		"1-lepton,HT>1200,4#leq N_{jets}#leq5,N_{b}=0", // 22
-		"1-lepton,HT>1200,6#leq N_{jets}#leq7,N_{b}=0",
-		"1-lepton,HT>1200,N_{jets}#geq8,N_{b}=0",
-		"1-lepton,HT>1200,4#leq N_{jets}#leq5,N_{b}=1", // 25
-		"1-lepton,HT>1200,6#leq N_{jets}#leq7,N_{b}=1",
-		"1-lepton,HT>1200,N_{jets}#geq8,N_{b}=1",
-		"1-lepton,HT>1200,4#leq N_{jets}#leq5,N_{b}=2",
-		"1-lepton,HT>1200,6#leq N_{jets}#leq7,N_{b}=2",
-		"1-lepton,HT>1200,N_{jets}#geq8,N_{b}=2", // 30
-		"1-lepton,HT>1200,4#leq N_{jets}#leq5,N_{b}#geq3",
-		"1-lepton,HT>1200,6#leq N_{jets}#leq7,N_{b}=3",
-		"1-lepton,HT>1200,N_{jets}#geq8,N_{b}=3",
-		"1-lepton,HT>1200,4#leq N_{jets}#leq5,N_{b}#geq4",
-		"1-lepton,HT>1200,6#leq N_{jets}#leq7,N_{b}#geq4", // 35
-		"1-lepton,HT>1200,N_{jets}#geq8,N_{b}#geq4",
-		"0-lepton,HT>1200,6#leq N_{jets}#leq7,N_{b}=0",
-		"0-lepton,HT>1200,8#leq N_{jets}#leq9,N_{b}=0",
-		"0-lepton,HT>1200,N_{jets}#geq10,N_{b}=0",
-		"0-lepton,HT>1200,6#leq N_{jets}#leq7,N_{b}=1", // 40
-		"0-lepton,HT>1200,8#leq N_{jets}#leq9,N_{b}=1",
-		"0-lepton,HT>1200,N_{jets}#geq10,N_{b}=1",
-		"0-lepton,HT>1200,6#leq N_{jets}#leq7,N_{b}=2",
-		"0-lepton,HT>1200,8#leq N_{jets}#leq9,N_{b}=2",
-		"0-lepton,HT>1200,N_{jets}#geq10,N_{b}=2", // 45
-		"0-lepton,HT>1200,6#leq N_{jets}#leq7,N_{b}#geq3",
-		"0-lepton,HT>1200,8#leq N_{jets}#leq9,N_{b}=3",
-		"0-lepton,HT>1200,N_{jets}#geq10,N_{b}=3",
-		"0-lepton,HT>1200,6#leq N_{jets}#leq7,N_{b}#geq4",
-		"0-lepton,HT>1200,8#leq N_{jets}#leq9,N_{b}#geq4", // 50
-		"0-lepton,HT>1200,N_{jets}#geq10,N_{b}#geq4"
+		"1-lepton, HT>1200, 4#leq N_{jet}#leq5, N_{b}=0", // 22
+		"1-lepton, HT>1200, 6#leq N_{jet}#leq7, N_{b}=0",
+		"1-lepton, HT>1200, N_{jet}#geq8, N_{b}=0",
+		"1-lepton, HT>1200, 4#leq N_{jet}#leq5, N_{b}=1", // 25
+		"1-lepton, HT>1200, 6#leq N_{jet}#leq7, N_{b}=1",
+		"1-lepton, HT>1200, N_{jet}#geq8, N_{b}=1",
+		"1-lepton, HT>1200, 4#leq N_{jet}#leq5, N_{b}=2",
+		"1-lepton, HT>1200, 6#leq N_{jet}#leq7, N_{b}=2",
+		"1-lepton, HT>1200, N_{jet}#geq8, N_{b}=2", // 30
+		"1-lepton, HT>1200, 4#leq N_{jet}#leq5, N_{b}#geq3",
+		"1-lepton, HT>1200, 6#leq N_{jet}#leq7, N_{b}=3",
+		"1-lepton, HT>1200, N_{jet}#geq8, N_{b}=3",
+		"1-lepton, HT>1200, 4#leq N_{jet}#leq5, N_{b}#geq4",
+		"1-lepton, HT>1200, 6#leq N_{jet}#leq7, N_{b}#geq4", // 35
+		"1-lepton, HT>1200, N_{jet}#geq8, N_{b}#geq4",
+		"0-lepton, HT>1200, 5#leq N_{jet}#leq6, N_{b}=0",
+		"0-lepton, HT>1200, 7#leq N_{jet}#leq8, N_{b}=0",
+		"0-lepton, HT>1200, N_{jet}#geq9, N_{b}=0",
+		"0-lepton, HT>1200, 5#leq N_{jet}#leq6, N_{b}=1", // 40
+		"0-lepton, HT>1200, 7#leq N_{jet}#leq8, N_{b}=1",
+		"0-lepton, HT>1200, N_{jet}#geq9, N_{b}=1",
+		"0-lepton, HT>1200, 5#leq N_{jet}#leq6, N_{b}=2",
+		"0-lepton, HT>1200, 7#leq N_{jet}#leq8, N_{b}=2",
+		"0-lepton, HT>1200, N_{jet}#geq9, N_{b}=2", // 45
+		"0-lepton, HT>1200, 5#leq N_{jet}#leq6, N_{b}#geq3",
+		"0-lepton, HT>1200, 7#leq N_{jet}#leq8, N_{b}=3",
+		"0-lepton, HT>1200, N_{jet}#geq9, N_{b}=3",
+		"0-lepton, HT>1200, 5#leq N_{jet}#leq6, N_{b}#geq4",
+		"0-lepton, HT>1200, 7#leq N_{jet}#leq8, N_{b}#geq4", // 50
+		"0-lepton, HT>1200, N_{jet}#geq9, N_{b}#geq4"
 	};
 
 	TString Mj_txt[3]={", 500<M_{J}<800",", 800<M_{J}<1100",", 1100<M_{J}"};
@@ -139,7 +139,8 @@ int main(int argc, char *argv[])
 		if(ibin == 34 or ibin==49) continue;
 		for (int iMj=0; iMj<3; iMj++){
 			Float_t vals[] = {qcd[ibin][iMj],ttbar[ibin][iMj],wjets[ibin][iMj],other[ibin][iMj],sig1800[ibin][iMj]};
-			Int_t colors[] = {kYellow-7,kAzure+7,kGreen+2,kGray+1,kRed+1};
+			//Int_t colors[] = {kYellow-7,kAzure+7,kGreen+2,kGray+1,kRed+1};
+			Int_t colors[] = {TColor::GetColor("#ffa90e"),TColor::GetColor("#3f90da"),TColor::GetColor("#832db6"),TColor::GetColor("#94a4a2"),TColor::GetColor("#bd1f01")};
 			Int_t nvals = sizeof(vals)/sizeof(vals[0]);
 			cpie[ibin][iMj] = new TCanvas(Form("cpie_%i_%i",ibin,iMj),Form("TPie test_%i_%i",ibin,iMj),700,700);
 			pie4[ibin][iMj] = new TPie(Form("pie4_%i_%i", ibin,iMj),Form(title_1[ibin]+Mj_txt[iMj]),nvals,vals,colors);
