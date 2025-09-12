@@ -141,25 +141,25 @@ void qcd_fake_ratio(TString year) {
     // real electron
     ch_dat->Draw("min(ht,1499.99)>>h_dat_real_ele", "pass*("+trigger+"&&"+injet+"&&"+cut_real_ele+")", "goff");
     ch_sig->Draw("min(ht,1499.99)>>h_sig_real_ele", lumi+"*weight*pass*stitch_ht*("+injet+"&&"+cut_real_ele+")", "goff");
-    ch_qcd->Draw("min(ht,1499.99)>>h_qcd_real_ele", lumi+"*"+qcd_nb0_sf+"*weight*pass*stitch_ht*("+injet+"&&"+cut_real_ele+")", "goff");
+    ch_qcd->Draw("min(ht,1499.99)>>h_qcd_real_ele", lumi+"*weight*pass*stitch_ht*("+injet+"&&"+cut_real_ele+")", "goff");
     ch_bkg->Draw("min(ht,1499.99)>>h_bkg_real_ele", lumi+"*weight*pass*stitch_ht*("+injet+"&&"+cut_real_ele+")", "goff");
 
     // fake electron
     ch_dat->Draw("min(ht,1499.99)>>h_dat_fake_ele", "pass*("+trigger+"&&"+injet+"&&"+cut_fake_ele+")", "goff");
     ch_sig->Draw("min(ht,1499.99)>>h_sig_fake_ele", lumi+"*weight*pass*stitch_ht*("+injet+"&&"+cut_fake_ele+")", "goff");
-    ch_qcd->Draw("min(ht,1499.99)>>h_qcd_fake_ele", lumi+"*"+qcd_nb0_sf+"*weight*pass*stitch_ht*("+injet+"&&"+cut_fake_ele+")", "goff");
+    ch_qcd->Draw("min(ht,1499.99)>>h_qcd_fake_ele", lumi+"*weight*pass*stitch_ht*("+injet+"&&"+cut_fake_ele+")", "goff");
     ch_bkg->Draw("min(ht,1499.99)>>h_bkg_fake_ele", lumi+"*weight*pass*stitch_ht*("+injet+"&&"+cut_fake_ele+")", "goff");
 
     // real muon
     ch_dat->Draw("min(ht,1499.99)>>h_dat_real_muon", "pass*("+trigger+"&&"+injet+"&&"+cut_real_muon+")", "goff");
     ch_sig->Draw("min(ht,1499.99)>>h_sig_real_muon", lumi+"*weight*pass*stitch_ht*("+injet+"&&"+cut_real_muon+")", "goff");
-    ch_qcd->Draw("min(ht,1499.99)>>h_qcd_real_muon", lumi+"*"+qcd_nb0_sf+"*weight*pass*stitch_ht*("+injet+"&&"+cut_real_muon+")", "goff");
+    ch_qcd->Draw("min(ht,1499.99)>>h_qcd_real_muon", lumi+"*weight*pass*stitch_ht*("+injet+"&&"+cut_real_muon+")", "goff");
     ch_bkg->Draw("min(ht,1499.99)>>h_bkg_real_muon", lumi+"*weight*pass*stitch_ht*("+injet+"&&"+cut_real_muon+")", "goff");
 
     // fake muon
     ch_dat->Draw("min(ht,1499.99)>>h_dat_fake_muon", "pass*("+trigger+"&&"+injet+"&&"+cut_fake_muon+")", "goff");
     ch_sig->Draw("min(ht,1499.99)>>h_sig_fake_muon", lumi+"*weight*pass*stitch_ht*("+injet+"&&"+cut_fake_muon+")", "goff");
-    ch_qcd->Draw("min(ht,1499.99)>>h_qcd_fake_muon", lumi+"*"+qcd_nb0_sf+"*weight*pass*stitch_ht*("+injet+"&&"+cut_fake_muon+")", "goff");
+    ch_qcd->Draw("min(ht,1499.99)>>h_qcd_fake_muon", lumi+"*weight*pass*stitch_ht*("+injet+"&&"+cut_fake_muon+")", "goff");
     ch_bkg->Draw("min(ht,1499.99)>>h_bkg_fake_muon", lumi+"*weight*pass*stitch_ht*("+injet+"&&"+cut_fake_muon+")", "goff");
 
     /*
