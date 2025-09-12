@@ -51,11 +51,11 @@ void muon_topology(TString year) {
   s_sig_m1800 = getRPVProcess(folder_sig, "rpv_m1800");
 
   vector<sfeats> Samples;
-  Samples.push_back(sfeats(s_sig_m1800, "m_{#tilde{g}}=1800 GeV", kRed, 1, cutandweight("pass","1."))); Samples.back().isSig = true;
-  Samples.push_back(sfeats(s_qcd,   "QCD",      rpv::c_qcd,   1, cutandweight("pass","1.")));
-  Samples.push_back(sfeats(s_wjets, "W+jets",   rpv::c_wjets, 1, cutandweight("pass","1.")));
-  Samples.push_back(sfeats(s_ttbar, "t#bar{t}", rpv::c_tt,    1, cutandweight("pass","1.")));
-  Samples.push_back(sfeats(s_other, "Others",   rpv::c_other, 1, cutandweight("pass","1.")));
+  Samples.push_back(sfeats(s_sig_m1800, "m_{#tilde{g}}=1800 GeV", TColor::GetColor("#bd1f01"), 1, cutandweight("pass","1."))); Samples.back().isSig = true;
+  Samples.push_back(sfeats(s_qcd,   "QCD",      TColor::GetColor("#ffa90e"),   1, cutandweight("pass","1.")));
+  Samples.push_back(sfeats(s_wjets, "W+jets",   TColor::GetColor("#832db6"), 1, cutandweight("pass","1.")));
+  Samples.push_back(sfeats(s_ttbar, "t#bar{t}", TColor::GetColor("#3f90da"),    1, cutandweight("pass","1.")));
+  Samples.push_back(sfeats(s_other, "Others",   TColor::GetColor("#94a4a2"), 1, cutandweight("pass","1.")));
 
   vector<int> rpv_sam;
   for(unsigned sam(0); sam < Samples.size(); sam++) rpv_sam.push_back(sam);
