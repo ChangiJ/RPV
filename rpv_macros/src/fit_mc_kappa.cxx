@@ -57,7 +57,7 @@ int linecolor(unsigned int isyst){
   else if(isyst==1) icolor=6;
   else if(isyst==2) icolor=7;
   else if(isyst==3) icolor=13; //
-  else if(isyst==4) icolor=900; //
+  else if(isyst==4) icolor=64; //
   else if(isyst==5) icolor=21; //
   else if(isyst==6) icolor=28;
   else if(isyst==7) icolor=38;
