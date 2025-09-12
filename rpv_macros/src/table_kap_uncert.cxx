@@ -563,8 +563,8 @@ float getKappaUnc(TString filename, TString procname, int ikap, int ibin, TStrin
 
   TFile* infile = TFile::Open(filename, "READ");
   TString year;
-  if(filename.Contains("2016")) year = "UL2016";
-  else if(filename.Contains("2017")||filename.Contains("2018")||filename.Contains("20178")) year = "UL20178";
+  if(filename.Contains("2016")) year = "2016";
+  else if(filename.Contains("2017")||filename.Contains("2018")||filename.Contains("20178")) year = "1718";
   else {
     cout << "ERROR: The inputfile name should include the year" << endl;
     return 0;
@@ -580,23 +580,23 @@ float getKappaUnc(TString filename, TString procname, int ikap, int ibin, TStrin
 
   if(syst=="kappa") {
     h_nominal = static_cast<TH1F*>(infile->Get(Form("bin%i/%s", ibin, procname.Data())));
-    h_up      = static_cast<TH1F*>(infile->Get(Form("bin%i/%s_kappa%d_njets%d_%s_%sUp", ibin, procname.Data(), ikap, ind_ijet, procname.Data(), year.Data())));
-    h_down    = static_cast<TH1F*>(infile->Get(Form("bin%i/%s_kappa%d_njets%d_%s_%sDown", ibin, procname.Data(), ikap, ind_ijet, procname.Data(), year.Data())));
+    h_up      = static_cast<TH1F*>(infile->Get(Form("bin%i/%s_CMS_SUS21005_kappa%d_njets%d_%s_%sUp", ibin, procname.Data(), ikap, ind_ijet, procname.Data(), year.Data())));
+    h_down    = static_cast<TH1F*>(infile->Get(Form("bin%i/%s_CMS_SUS21005_kappa%d_njets%d_%s_%sDown", ibin, procname.Data(), ikap, ind_ijet, procname.Data(), year.Data())));
   }
   else if(syst=="mjsyst") {
     h_nominal = static_cast<TH1F*>(infile->Get(Form("bin%i/%s", ibin, procname.Data())));
-    h_up      = static_cast<TH1F*>(infile->Get(Form("bin%i/%s_mjsyst_r%d_njets%d_%s_%sUp", ibin, procname.Data(), ikap, ind_ijet, procname.Data(), year.Data())));
-    h_down    = static_cast<TH1F*>(infile->Get(Form("bin%i/%s_mjsyst_r%d_njets%d_%s_%sDown", ibin, procname.Data(), ikap, ind_ijet, procname.Data(), year.Data())));
+    h_up      = static_cast<TH1F*>(infile->Get(Form("bin%i/%s_CMS_SUS21005_mjsyst_r%d_njets%d_%s_%sUp", ibin, procname.Data(), ikap, ind_ijet, procname.Data(), year.Data())));
+    h_down    = static_cast<TH1F*>(infile->Get(Form("bin%i/%s_CMS_SUS21005_mjsyst_r%d_njets%d_%s_%sDown", ibin, procname.Data(), ikap, ind_ijet, procname.Data(), year.Data())));
   }
   else if(syst=="mckappa") {
     // mckappa consists of jec, jer, and combined systs
     h_nominal = static_cast<TH1F*>(infile->Get(Form("bin%i/%s", ibin, procname.Data())));
-    h_up      = static_cast<TH1F*>(infile->Get(Form("bin%i/%s_MC_kappa%d_njets%d_%sUp", ibin, procname.Data(), ikap, ind_ijet, year.Data())));
-    h_down    = static_cast<TH1F*>(infile->Get(Form("bin%i/%s_MC_kappa%d_njets%d_%sDown", ibin, procname.Data(), ikap, ind_ijet, year.Data())));
-    h_mckappa_jec_up      = static_cast<TH1F*>(infile->Get(Form("bin%i/%s_MC_kappa%d_jec_njets%d_%sUp", ibin, procname.Data(), ikap, ind_ijet, year.Data())));
-    h_mckappa_jec_down      = static_cast<TH1F*>(infile->Get(Form("bin%i/%s_MC_kappa%d_jec_njets%d_%sDown", ibin, procname.Data(), ikap, ind_ijet, year.Data())));
-    h_mckappa_jer_up      = static_cast<TH1F*>(infile->Get(Form("bin%i/%s_MC_kappa%d_jer_njets%d_%sUp", ibin, procname.Data(), ikap, ind_ijet, year.Data())));
-    h_mckappa_jer_down      = static_cast<TH1F*>(infile->Get(Form("bin%i/%s_MC_kappa%d_jer_njets%d_%sDown", ibin, procname.Data(), ikap, ind_ijet, year.Data())));
+    h_up      = static_cast<TH1F*>(infile->Get(Form("bin%i/%s_CMS_SUS21005_MC_kappa%d_njets%d_%sUp", ibin, procname.Data(), ikap, ind_ijet, year.Data())));
+    h_down    = static_cast<TH1F*>(infile->Get(Form("bin%i/%s_CMS_SUS21005_MC_kappa%d_njets%d_%sDown", ibin, procname.Data(), ikap, ind_ijet, year.Data())));
+    h_mckappa_jec_up      = static_cast<TH1F*>(infile->Get(Form("bin%i/%s_CMS_SUS21005_MC_kappa%d_jec_njets%d_%sUp", ibin, procname.Data(), ikap, ind_ijet, year.Data())));
+    h_mckappa_jec_down      = static_cast<TH1F*>(infile->Get(Form("bin%i/%s_CMS_SUS21005_MC_kappa%d_jec_njets%d_%sDown", ibin, procname.Data(), ikap, ind_ijet, year.Data())));
+    h_mckappa_jer_up      = static_cast<TH1F*>(infile->Get(Form("bin%i/%s_CMS_SUS21005_MC_kappa%d_jer_njets%d_%sUp", ibin, procname.Data(), ikap, ind_ijet, year.Data())));
+    h_mckappa_jer_down      = static_cast<TH1F*>(infile->Get(Form("bin%i/%s_CMS_SUS21005_MC_kappa%d_jer_njets%d_%sDown", ibin, procname.Data(), ikap, ind_ijet, year.Data())));
 
     kap_jec_up   = h_mckappa_jec_up->GetBinContent(ikap+1)/h_mckappa_jec_up->GetBinContent(1);
     kap_jec_down = h_mckappa_jec_down->GetBinContent(ikap+1)/h_mckappa_jec_down->GetBinContent(1);
@@ -605,8 +605,8 @@ float getKappaUnc(TString filename, TString procname, int ikap, int ibin, TStrin
   }
   else if(syst=="mjshape_dy") {
     h_nominal = static_cast<TH1F*>(infile->Get(Form("bin%i/%s", ibin, procname.Data())));
-    h_up      = static_cast<TH1F*>(infile->Get(Form("bin%i/%s_kappa%d_unc_dy_njets%d_%s_%sUp", ibin, procname.Data(), ikap, ind_ijet, procname.Data(), year.Data())));
-    h_down    = static_cast<TH1F*>(infile->Get(Form("bin%i/%s_kappa%d_unc_dy_njets%d_%s_%sDown", ibin, procname.Data(), ikap, ind_ijet, procname.Data(), year.Data())));
+    h_up      = static_cast<TH1F*>(infile->Get(Form("bin%i/%s_CMS_SUS21005_kappa%d_unc_dy_njets%d_%s_%sUp", ibin, procname.Data(), ikap, ind_ijet, procname.Data(), year.Data())));
+    h_down    = static_cast<TH1F*>(infile->Get(Form("bin%i/%s_CMS_SUS21005_kappa%d_unc_dy_njets%d_%s_%sDown", ibin, procname.Data(), ikap, ind_ijet, procname.Data(), year.Data())));
   }
 
   kap_nom  = h_nominal->GetBinContent(ikap+1)/h_nominal->GetBinContent(1);
