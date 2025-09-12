@@ -256,7 +256,8 @@ void compare_shape_wjets_dy(TString year)
   else if(year=="UL2018")  	  {lumi=59.8;  lumi_title="59p8";}
   else if(year=="UL2016_comb") 	  {lumi=36.3;  lumi_title="36p3";}
   else if(year=="UL20178_comb")	  {lumi=101.3; lumi_title="101p3";}
-  else {cout << "Please input the year as UL2016_preVFP/UL2016_postVFP/UL2017/UL2018/UL2016_comb/UL20178_comb" << endl;}
+  else if(year=="UL201678_comb")  {lumi=138.;  lumi_title="138";}
+  else {cout << "Please input the year as UL2016_preVFP/UL2016_postVFP/UL2017/UL2018/UL2016_comb/UL20178_comb/UL201678_comb" << endl;}
 
   TString folder_wjets   = folder_year(year, false).at(0);
   TString folder_dy_mc   = folder_year(year, false).at(3);
@@ -315,6 +316,11 @@ void compare_shape_wjets_dy(TString year)
       if(tree_dy.njets()>=5 && tree_dy.njets()<=6) h_dy_njets56->Fill(tree_dy.mj12(), lumi*tree_dy.weight()*tree_dy.frac1718());
       if(tree_dy.njets()>=7) h_dy_njets7->Fill(tree_dy.mj12(), lumi*tree_dy.weight()*tree_dy.frac1718());
     }
+    else if(year=="UL201678_comb") {
+      if(tree_dy.njets()>=3 && tree_dy.njets()<=4) h_dy_njets34->Fill(tree_dy.mj12(), lumi*tree_dy.weight()*tree_dy.frac16()*tree_dy.frac1718());
+      if(tree_dy.njets()>=5 && tree_dy.njets()<=6) h_dy_njets56->Fill(tree_dy.mj12(), lumi*tree_dy.weight()*tree_dy.frac16()*tree_dy.frac1718());
+      if(tree_dy.njets()>=7) h_dy_njets7->Fill(tree_dy.mj12(), lumi*tree_dy.weight()*tree_dy.frac16()*tree_dy.frac1718());
+    }
     else {
       if(tree_dy.njets()>=3 && tree_dy.njets()<=4) h_dy_njets34->Fill(tree_dy.mj12(), lumi*tree_dy.weight());
       if(tree_dy.njets()>=5 && tree_dy.njets()<=6) h_dy_njets56->Fill(tree_dy.mj12(), lumi*tree_dy.weight());
@@ -346,6 +352,11 @@ void compare_shape_wjets_dy(TString year)
       if(tree_wjets.njets()>=4 && tree_wjets.njets()<=5) h_wjets_njets45->Fill(tree_wjets.mj12(), lumi*tree_wjets.weight()*tree_wjets.frac1718());
       if(tree_wjets.njets()>=6 && tree_wjets.njets()<=7) h_wjets_njets67->Fill(tree_wjets.mj12(), lumi*tree_wjets.weight()*tree_wjets.frac1718());
       if(tree_wjets.njets()>=8) h_wjets_njets8->Fill(tree_wjets.mj12(), lumi*tree_wjets.weight()*tree_wjets.frac1718());
+    }
+    else if(year=="UL201678_comb") {
+      if(tree_wjets.njets()>=4 && tree_wjets.njets()<=5) h_wjets_njets45->Fill(tree_wjets.mj12(), lumi*tree_wjets.weight()*tree_wjets.frac16()*tree_wjets.frac1718());
+      if(tree_wjets.njets()>=6 && tree_wjets.njets()<=7) h_wjets_njets67->Fill(tree_wjets.mj12(), lumi*tree_wjets.weight()*tree_wjets.frac16()*tree_wjets.frac1718());
+      if(tree_wjets.njets()>=8) h_wjets_njets8->Fill(tree_wjets.mj12(), lumi*tree_wjets.weight()*tree_wjets.frac16()*tree_wjets.frac1718());
     }
     else {
       if(tree_wjets.njets()>=4 && tree_wjets.njets()<=5) h_wjets_njets45->Fill(tree_wjets.mj12(), lumi*tree_wjets.weight());
@@ -456,6 +467,7 @@ void compare_shape_wjets_dy(TString year)
   yr = year;
   if(year=="UL2016_comb")  yr="UL2016";
   if(year=="UL20178_comb") yr="UL20178";
+  if(year=="UL201678_comb") yr="UL201678";
 
 
   // Make TLegend
