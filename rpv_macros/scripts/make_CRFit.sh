@@ -18,27 +18,27 @@ for year in ${years[@]}
 		./run/make_variations_loop_newntuple.exe nominal off 500 1400 ${year} UL2016
 		./run/make_variations_loop_newntuple.exe kappa off 500 1400 ${year} UL2016
 		rm variations/output_syst_${year}_UL2016.root
-		#for syst in {kappa,jer,jec,btag_bc,btag_udsg,mur,murf,muf,gs,lep_eff,pileup}; do
+		#for syst in {kappa,jer,jec,btag_bc,btag_udsg,mur,murf,muf,gs,els_eff,mus_eff,pileup}; do
     			#hadd -a -f variations/output_syst_${year}_UL2016.root variations/output_${syst}_newnt_${year}_UL2016.root
   		#done
-    		hadd -f variations/output_syst_${year}_UL2016.root variations/output_kappa_newnt_${year}_UL2016.root variations/output_jer_newnt_${year}_UL2016.root variations/output_jec_newnt_${year}_UL2016.root variations/output_btag_bc_uncor_newnt_${year}_UL2016.root variations/output_btag_bc_cor_newnt_${year}_UL2016.root variations/output_btag_udsg_uncor_newnt_${year}_UL2016.root variations/output_btag_udsg_cor_newnt_${year}_UL2016.root variations/output_mur_newnt_${year}_UL2016.root variations/output_murf_newnt_${year}_UL2016.root variations/output_muf_newnt_${year}_UL2016.root variations/output_gs_newnt_${year}_UL2016.root variations/output_lep_eff_newnt_${year}_UL2016.root variations/output_pileup_newnt_${year}_UL2016.root
+    		hadd -f variations/output_syst_${year}_UL2016.root variations/output_kappa_newnt_${year}_UL2016.root variations/output_jer_newnt_${year}_UL2016.root variations/output_jec_newnt_${year}_UL2016.root variations/output_btag_bc_uncor_newnt_${year}_UL2016.root variations/output_btag_bc_cor_newnt_${year}_UL2016.root variations/output_btag_udsg_uncor_newnt_${year}_UL2016.root variations/output_btag_udsg_cor_newnt_${year}_UL2016.root variations/output_mur_newnt_${year}_UL2016.root variations/output_murf_newnt_${year}_UL2016.root variations/output_muf_newnt_${year}_UL2016.root variations/output_gs_newnt_${year}_UL2016.root variations/output_els_eff_newnt_${year}_UL2016.root variations/output_mus_eff_newnt_${year}_UL2016.root variations/output_pileup_newnt_${year}_UL2016.root
 	elif [ $1 = "UL20178" ]
 		then
 		./run/make_variations_loop_newntuple.exe nominal off 500 1400 ${year} UL20178
 		./run/make_variations_loop_newntuple.exe kappa off 500 1400 ${year} UL20178
 		rm variations/output_syst_${year}_UL20178.root
-		#for syst in {kappa,jer,jec,btag_bc,btag_udsg,mur,murf,muf,gs,lep_eff,pileup}; do
+		#for syst in {kappa,jer,jec,btag_bc,btag_udsg,mur,murf,muf,gs,els_eff,mus_eff,pileup}; do
     			#hadd -a -f variations/output_syst_${year}_UL20178.root variations/output_${syst}_newnt_${year}_UL20178.root
   		#done
-    		hadd -f variations/output_syst_${year}_UL20178.root variations/output_kappa_newnt_${year}_UL20178.root variations/output_jer_newnt_${year}_UL20178.root variations/output_jec_newnt_${year}_UL20178.root variations/output_btag_bc_uncor_newnt_${year}_UL20178.root variations/output_btag_bc_cor_newnt_${year}_UL20178.root variations/output_btag_udsg_uncor_newnt_${year}_UL20178.root variations/output_btag_udsg_cor_newnt_${year}_UL20178.root variations/output_mur_newnt_${year}_UL20178.root variations/output_murf_newnt_${year}_UL20178.root variations/output_muf_newnt_${year}_UL20178.root variations/output_gs_newnt_${year}_UL20178.root variations/output_lep_eff_newnt_${year}_UL20178.root variations/output_pileup_newnt_${year}_UL20178.root
+    		hadd -f variations/output_syst_${year}_UL20178.root variations/output_kappa_newnt_${year}_UL20178.root variations/output_jer_newnt_${year}_UL20178.root variations/output_jec_newnt_${year}_UL20178.root variations/output_btag_bc_uncor_newnt_${year}_UL20178.root variations/output_btag_bc_cor_newnt_${year}_UL20178.root variations/output_btag_udsg_uncor_newnt_${year}_UL20178.root variations/output_btag_udsg_cor_newnt_${year}_UL20178.root variations/output_mur_newnt_${year}_UL20178.root variations/output_murf_newnt_${year}_UL20178.root variations/output_muf_newnt_${year}_UL20178.root variations/output_gs_newnt_${year}_UL20178.root variations/output_els_eff_newnt_${year}_UL20178.root variations/output_mus_eff_newnt_${year}_UL20178.root variations/output_pileup_newnt_${year}_UL20178.root
 	else
 		./run/make_variations_loop_newntuple.exe nominal off 500 1400 ${year}
 		./run/make_variations_loop_newntuple.exe kappa off 500 1400 ${year}
 		rm variations/output_syst_${year}.root
-		#for syst in {kappa,mur,murf,muf,lep_eff,btag_udsg,btag_bc,jec,jer,gs,pileup}; do
+		#for syst in {kappa,mur,murf,muf,els_eff,mus_eff,btag_udsg,btag_bc,jec,jer,gs,pileup}; do
           	#      hadd -f -a variations/output_syst_${year}.root variations/output_${syst}_newnt_${year}.root
   	        #done
-    		hadd -f variations/output_syst_${year}.root variations/output_kappa_newnt_${year}.root variations/output_jer_newnt_${year}.root variations/output_jec_newnt_${year}.root variations/output_btag_bc_uncor_newnt_${year}.root variations/output_btag_bc_cor_newnt_${year}.root variations/output_btag_udsg_uncor_newnt_${year}.root variations/output_btag_udsg_cor_newnt_${year}.root variations/output_mur_newnt_${year}.root variations/output_murf_newnt_${year}.root variations/output_muf_newnt_${year}.root variations/output_gs_newnt_${year}.root variations/output_lep_eff_newnt_${year}.root variations/output_pileup_newnt_${year}.root
+    		hadd -f variations/output_syst_${year}.root variations/output_kappa_newnt_${year}.root variations/output_jer_newnt_${year}.root variations/output_jec_newnt_${year}.root variations/output_btag_bc_uncor_newnt_${year}.root variations/output_btag_bc_cor_newnt_${year}.root variations/output_btag_udsg_uncor_newnt_${year}.root variations/output_btag_udsg_cor_newnt_${year}.root variations/output_mur_newnt_${year}.root variations/output_murf_newnt_${year}.root variations/output_muf_newnt_${year}.root variations/output_gs_newnt_${year}.root variations/output_els_eff_newnt_${year}.root variations/output_mus_eff_newnt_${year}.root variations/output_pileup_newnt_${year}.root
 	fi
 	if [ ${mconly} = "on" ]
 		then
