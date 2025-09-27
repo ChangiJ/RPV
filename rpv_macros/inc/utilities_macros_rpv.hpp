@@ -581,6 +581,8 @@ bool passBinCut(int bin, int nleps_, float ht_, int njets_, float mj_, int nb_)
 		ht          = ht1lepCut;
 		njetsLow    = njetsVLowCut+2;
 		njetsHigh   = njetsVLowCut+3;
+		//njetsLow    = njetsVLowCut+1;
+		//njetsHigh   = njetsVLowCut+2;
 		nbLow       = nbVLowCut;
 		nbHigh      = nbLowCut;
 	}
@@ -590,6 +592,8 @@ bool passBinCut(int bin, int nleps_, float ht_, int njets_, float mj_, int nb_)
 		ht          = ht1lepCut;
 		njetsLow    = njetsLowCut+2;
 		njetsHigh   = njetsLowCut+3;
+		//njetsLow    = njetsLowCut+1;
+		//njetsHigh   = njetsLowCut+2;
 		nbLow       = nbVLowCut;
 		nbHigh      = nbLowCut;
 	}
@@ -599,6 +603,8 @@ bool passBinCut(int bin, int nleps_, float ht_, int njets_, float mj_, int nb_)
 		ht          = ht1lepCut;
 		njetsLow    = njetsMedCut+2;
 		njetsHigh   = njetsInfCut;
+		//njetsLow    = njetsMedCut+1;
+		//njetsHigh   = njetsInfCut-1;
 		nbLow       = nbVLowCut;
 		nbHigh      = nbLowCut;
 	}
@@ -608,6 +614,8 @@ bool passBinCut(int bin, int nleps_, float ht_, int njets_, float mj_, int nb_)
 		ht          = ht1lepCut;
 		njetsLow    = njetsVLowCut+2;
 		njetsHigh   = njetsVLowCut+3;
+		//njetsLow    = njetsVLowCut+1;
+		//njetsHigh   = njetsVLowCut+2;
 		nbLow       = nbLowCut;
 		nbHigh      = nbMedCut;
 	}
@@ -617,6 +625,8 @@ bool passBinCut(int bin, int nleps_, float ht_, int njets_, float mj_, int nb_)
 		ht          = ht1lepCut;
 		njetsLow    = njetsLowCut+2;
 		njetsHigh   = njetsLowCut+3;
+		//njetsLow    = njetsLowCut+1;
+		//njetsHigh   = njetsLowCut+2;
 		nbLow       = nbLowCut;
 		nbHigh      = nbMedCut;
 	}
@@ -626,6 +636,8 @@ bool passBinCut(int bin, int nleps_, float ht_, int njets_, float mj_, int nb_)
 		ht          = ht1lepCut;
 		njetsLow    = njetsMedCut+2;
 		njetsHigh   = njetsInfCut;
+		//njetsLow    = njetsMedCut+1;
+		//njetsHigh   = njetsInfCut-1;
 		nbLow       = nbLowCut;
 		nbHigh      = nbMedCut;
 	}
@@ -635,6 +647,8 @@ bool passBinCut(int bin, int nleps_, float ht_, int njets_, float mj_, int nb_)
 		ht          = ht1lepCut;
 		njetsLow    = njetsVLowCut+2;
 		njetsHigh   = njetsVLowCut+3;
+		//njetsLow    = njetsVLowCut+1;
+		//njetsHigh   = njetsVLowCut+2;
 		nbLow       = nbMedCut;
 		nbHigh      = nbHighCut;
 	}
@@ -644,6 +658,8 @@ bool passBinCut(int bin, int nleps_, float ht_, int njets_, float mj_, int nb_)
 		ht          = ht1lepCut;
 		njetsLow    = njetsLowCut+2;
 		njetsHigh   = njetsLowCut+3;
+		//njetsLow    = njetsLowCut+1;
+		//njetsHigh   = njetsLowCut+2;
 		nbLow       = nbMedCut;
 		nbHigh      = nbHighCut;
 	}
@@ -653,6 +669,8 @@ bool passBinCut(int bin, int nleps_, float ht_, int njets_, float mj_, int nb_)
 		ht          = ht1lepCut;
 		njetsLow    = njetsMedCut+2;
 		njetsHigh   = njetsInfCut;
+		//njetsLow    = njetsMedCut+1;
+		//njetsHigh   = njetsInfCut-1;
 		nbLow       = nbMedCut;
 		nbHigh      = nbHighCut;
 	}
@@ -662,6 +680,8 @@ bool passBinCut(int bin, int nleps_, float ht_, int njets_, float mj_, int nb_)
 		ht          = ht1lepCut;
 		njetsLow    = njetsVLowCut+2;
 		njetsHigh   = njetsVLowCut+3;
+		//njetsLow    = njetsVLowCut+1;
+		//njetsHigh   = njetsVLowCut+2;
 		nbLow       = nbHighCut;
 		nbHigh      = nbInfCut;
 	}// bin 46's definition = nb 3+
@@ -671,6 +691,8 @@ bool passBinCut(int bin, int nleps_, float ht_, int njets_, float mj_, int nb_)
 		ht          = ht1lepCut;
 		njetsLow    = njetsLowCut+2;
 		njetsHigh   = njetsLowCut+3;
+		//njetsLow    = njetsLowCut+1;
+		//njetsHigh   = njetsLowCut+2;
 		nbLow       = nbHighCut;
 		nbHigh      = nbVHighCut;
 	}
@@ -680,6 +702,8 @@ bool passBinCut(int bin, int nleps_, float ht_, int njets_, float mj_, int nb_)
 		ht          = ht1lepCut;
 		njetsLow    = njetsMedCut+2;
 		njetsHigh   = njetsInfCut;
+		//njetsLow    = njetsMedCut+1;
+		//njetsHigh   = njetsInfCut-1;
 		nbLow       = nbHighCut;
 		nbHigh      = nbVHighCut;
 	}
@@ -689,6 +713,8 @@ bool passBinCut(int bin, int nleps_, float ht_, int njets_, float mj_, int nb_)
 		ht          = ht1lepCut;
 		njetsLow    = njetsVLowCut+2;
 		njetsHigh   = njetsVLowCut+3;
+		//njetsLow    = njetsVLowCut+1;
+		//njetsHigh   = njetsVLowCut+2;
 		nbLow       = nbVHighCut;
 		nbHigh      = nbInfCut;
 	}// this bin will be ignored
@@ -698,6 +724,8 @@ bool passBinCut(int bin, int nleps_, float ht_, int njets_, float mj_, int nb_)
 		ht          = ht1lepCut;
 		njetsLow    = njetsLowCut+2;
 		njetsHigh   = njetsLowCut+3;
+		//njetsLow    = njetsLowCut+1;
+		//njetsHigh   = njetsLowCut+2;
 		nbLow       = nbVHighCut;
 		nbHigh      = nbInfCut;
 	}
@@ -707,6 +735,8 @@ bool passBinCut(int bin, int nleps_, float ht_, int njets_, float mj_, int nb_)
 		ht          = ht1lepCut;
 		njetsLow    = njetsMedCut+2;
 		njetsHigh   = njetsInfCut;
+		//njetsLow    = njetsMedCut+1;
+		//njetsHigh   = njetsInfCut-1;
 		nbLow       = nbVHighCut;
 		nbHigh      = nbInfCut;
 	}
