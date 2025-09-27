@@ -304,7 +304,6 @@ for ibin in binList:
     # total unc
     for i in range(1, systHist.GetNbinsX()+1):
         table.SetBinContent(i, 1, integral_tot_systHist.GetBinContent(i))
-#    print(table.GetBinContent(3,nSyst+1))
 
     ROOT.gStyle.SetPadLeftMargin(0.35)
     ROOT.gStyle.SetPadRightMargin(0.2)
@@ -331,7 +330,7 @@ for ibin in binList:
     table.GetYaxis().SetTitleOffset(1.4)
     table.GetYaxis().SetTitleSize(0.054)
     #table.GetYaxis().SetLabelSize(0.04)
-    table.GetYaxis().SetLabelSize(0.03)
+    table.GetYaxis().SetLabelSize(0.035)
     table.GetXaxis().SetTitleSize(0.04)
     table.Draw("colz text")
     ROOT.gPad.SetTicks(1,0)
@@ -370,6 +369,12 @@ for ibin in binList:
     else:
          outname = "plots/rpv_sig_syst/" + str(Year) + "/table_sig_systs_" + directory + "_m" + str(GLUINOMASS) + "_" + str(Year) + ".pdf"
          
+    for i in range(1, 4):
+        for j in range(1, nSyst+2):
+            if(directory=="bin36"):
+                print(str(table.GetBinContent(i, j))+", ", end='')
+        print("\n")
+
     c2.Print(outname)
 
 

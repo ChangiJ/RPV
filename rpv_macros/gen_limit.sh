@@ -66,19 +66,20 @@ for year in UL2018; do
         ./run/make_rpv_datacard_newbins.exe ${mass} mconly output_impact_${year}_UL20178_rescale.root ${year} UL20178 on
     done
 done
-#END
 # do combineCards
 echo "...do combineCards"
 for mass in {1000..2200..100}; do
    combineCards.py datacards/datacard_M${mass}_mconly_nopdfoutput_impact_UL2016_preVFP_UL2016_rescale.dat datacards/datacard_M${mass}_mconly_nopdfoutput_impact_UL2016_postVFP_UL2016_rescale.dat datacards/datacard_M${mass}_mconly_nopdfoutput_impact_UL2017_UL20178_rescale.dat datacards/datacard_M${mass}_mconly_nopdfoutput_impact_UL2018_UL20178_rescale.dat > datacards/datacard_M${mass}_mconly_nopdfoutput_impact_UL201678_rescale.dat
 done
+#END
 
 # do combine
 echo "...do combine"
 for mass in {1000..2200..100}; do
+#for mass in {2100..2200..100}; do
     echo ${mass}
     combine -M AsymptoticLimits datacards/datacard_M${mass}_mconly_nopdfoutput_impact_UL201678_rescale.dat
-    mv higgsCombineTest.AsymptoticLimits.mH120.root newbin_250122/higgsCombine_M${mass}.AsymptoticLimits.mH120.root
+    mv higgsCombineTest.AsymptoticLimits.mH120.root newbin_250225/higgsCombine_M${mass}.AsymptoticLimits.mH120.root
 done
 
 # Then run limits_new.cc
