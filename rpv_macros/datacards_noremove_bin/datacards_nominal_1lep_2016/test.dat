@@ -1,0 +1,19 @@
+Combination of datacards/datacard_M1800_mconly_cr_nb0_lownjets_nopdfoutput_nominal_newnt_2016_mconly.dat  datacards/datacard_M1800_mconly_cr_nb1_lownjets_nopdfoutput_nominal_newnt_2016_mconly.dat
+imax 4 number of bins
+jmax 4 number of processes minus 1
+kmax 1 number of nuisance parameters
+----------------------------------------------------------------------------------------------------------------------------------
+shapes *          ch1_bin22  datacards/variations/output_nominal_newnt_2016_mconly.root bin22/$PROCESS bin22/$PROCESS_$SYSTEMATIC
+shapes *          ch1_bin37  datacards/variations/output_nominal_newnt_2016_mconly.root bin37/$PROCESS bin37/$PROCESS_$SYSTEMATIC
+shapes *          ch2_bin25  datacards/variations/output_nominal_newnt_2016_mconly.root bin25/$PROCESS bin25/$PROCESS_$SYSTEMATIC
+shapes *          ch2_bin40  datacards/variations/output_nominal_newnt_2016_mconly.root bin40/$PROCESS bin40/$PROCESS_$SYSTEMATIC
+----------------------------------------------------------------------------------------------------------------------------------
+bin          ch1_bin37  ch1_bin22  ch2_bin40  ch2_bin25
+observation  349158     1805.87    128704     1006.58  
+----------------------------------------------------------------------------------------------------------------------------------
+bin                             ch1_bin37     ch1_bin37     ch1_bin37     ch1_bin37     ch1_bin37     ch1_bin22     ch1_bin22     ch1_bin22     ch1_bin22     ch1_bin22     ch2_bin40     ch2_bin40     ch2_bin40     ch2_bin40     ch2_bin40     ch2_bin25     ch2_bin25     ch2_bin25     ch2_bin25     ch2_bin25   
+process                         signal_M1800  qcd           ttbar         wjets         other         signal_M1800  qcd           ttbar         wjets         other         signal_M1800  qcd           ttbar         wjets         other         signal_M1800  qcd           ttbar         wjets         other       
+process                         0             1             2             3             4             0             1             2             3             4             0             1             2             3             4             0             1             2             3             4           
+rate                            0.404837      346845        1253.95       680.355       378.627       0.12779       409.93        166.24        1016.83       212.872       1.87896       124222        3646.99       265.453       569.748       0.402326      169.239       422.965       285.722       128.657     
+----------------------------------------------------------------------------------------------------------------------------------
+trigeff_2016            lnN     1.01          -             -             -             1.01          1.01          -             -             -             1.01          1.01          -             -             -             1.01          1.01          -             -             -             1.01        

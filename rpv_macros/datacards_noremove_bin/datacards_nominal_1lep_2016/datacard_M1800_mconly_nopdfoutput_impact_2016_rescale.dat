@@ -1,0 +1,44 @@
+imax 28 number of bins
+jmax 4
+kmax * number of nuisance parameters
+------------------------------------
+shapes * bin37 variations/output_impact_2016_rescale.root bin37/$PROCESS bin37/$PROCESS_$SYSTEMATIC
+shapes * bin22 variations/output_impact_2016_rescale.root bin22/$PROCESS bin22/$PROCESS_$SYSTEMATIC
+shapes * bin38 variations/output_impact_2016_rescale.root bin38/$PROCESS bin38/$PROCESS_$SYSTEMATIC
+shapes * bin23 variations/output_impact_2016_rescale.root bin23/$PROCESS bin23/$PROCESS_$SYSTEMATIC
+shapes * bin39 variations/output_impact_2016_rescale.root bin39/$PROCESS bin39/$PROCESS_$SYSTEMATIC
+shapes * bin24 variations/output_impact_2016_rescale.root bin24/$PROCESS bin24/$PROCESS_$SYSTEMATIC
+shapes * bin40 variations/output_impact_2016_rescale.root bin40/$PROCESS bin40/$PROCESS_$SYSTEMATIC
+shapes * bin25 variations/output_impact_2016_rescale.root bin25/$PROCESS bin25/$PROCESS_$SYSTEMATIC
+shapes * bin43 variations/output_impact_2016_rescale.root bin43/$PROCESS bin43/$PROCESS_$SYSTEMATIC
+shapes * bin28 variations/output_impact_2016_rescale.root bin28/$PROCESS bin28/$PROCESS_$SYSTEMATIC
+shapes * bin41 variations/output_impact_2016_rescale.root bin41/$PROCESS bin41/$PROCESS_$SYSTEMATIC
+shapes * bin26 variations/output_impact_2016_rescale.root bin26/$PROCESS bin26/$PROCESS_$SYSTEMATIC
+shapes * bin42 variations/output_impact_2016_rescale.root bin42/$PROCESS bin42/$PROCESS_$SYSTEMATIC
+shapes * bin27 variations/output_impact_2016_rescale.root bin27/$PROCESS bin27/$PROCESS_$SYSTEMATIC
+shapes * bin44 variations/output_impact_2016_rescale.root bin44/$PROCESS bin44/$PROCESS_$SYSTEMATIC
+shapes * bin29 variations/output_impact_2016_rescale.root bin29/$PROCESS bin29/$PROCESS_$SYSTEMATIC
+shapes * bin46 variations/output_impact_2016_rescale.root bin46/$PROCESS bin46/$PROCESS_$SYSTEMATIC
+shapes * bin31 variations/output_impact_2016_rescale.root bin31/$PROCESS bin31/$PROCESS_$SYSTEMATIC
+shapes * bin47 variations/output_impact_2016_rescale.root bin47/$PROCESS bin47/$PROCESS_$SYSTEMATIC
+shapes * bin32 variations/output_impact_2016_rescale.root bin32/$PROCESS bin32/$PROCESS_$SYSTEMATIC
+shapes * bin50 variations/output_impact_2016_rescale.root bin50/$PROCESS bin50/$PROCESS_$SYSTEMATIC
+shapes * bin35 variations/output_impact_2016_rescale.root bin35/$PROCESS bin35/$PROCESS_$SYSTEMATIC
+shapes * bin45 variations/output_impact_2016_rescale.root bin45/$PROCESS bin45/$PROCESS_$SYSTEMATIC
+shapes * bin30 variations/output_impact_2016_rescale.root bin30/$PROCESS bin30/$PROCESS_$SYSTEMATIC
+shapes * bin48 variations/output_impact_2016_rescale.root bin48/$PROCESS bin48/$PROCESS_$SYSTEMATIC
+shapes * bin33 variations/output_impact_2016_rescale.root bin33/$PROCESS bin33/$PROCESS_$SYSTEMATIC
+shapes * bin51 variations/output_impact_2016_rescale.root bin51/$PROCESS bin51/$PROCESS_$SYSTEMATIC
+shapes * bin36 variations/output_impact_2016_rescale.root bin36/$PROCESS bin36/$PROCESS_$SYSTEMATIC
+------------------------------------
+bin          bin37 bin22 bin38 bin23 bin39 bin24 bin40 bin25 bin43 bin28 bin41 bin26 bin42 bin27 bin44 bin29 bin46 bin31 bin47 bin32 bin50 bin35 bin45 bin30 bin48 bin33 bin51 bin36 
+observation  349158 1805.87 136081 1437.75 25561.9 572.375 128704 1006.58 32301 350.788 59996.2 1480.8 14372.7 1052.99 20251.3 913.313 5464.77 62.1826 4061.28 177.461 608.594 24.5934 6658.71 969.03 1795.07 266.596 350.266 55.8089 
+------------------------------------
+bin  bin37 bin37 bin37 bin37 bin37 bin22 bin22 bin22 bin22 bin22 bin38 bin38 bin38 bin38 bin38 bin23 bin23 bin23 bin23 bin23 bin39 bin39 bin39 bin39 bin39 bin24 bin24 bin24 bin24 bin24 bin40 bin40 bin40 bin40 bin40 bin25 bin25 bin25 bin25 bin25 bin43 bin43 bin43 bin43 bin43 bin28 bin28 bin28 bin28 bin28 bin41 bin41 bin41 bin41 bin41 bin26 bin26 bin26 bin26 bin26 bin42 bin42 bin42 bin42 bin42 bin27 bin27 bin27 bin27 bin27 bin44 bin44 bin44 bin44 bin44 bin29 bin29 bin29 bin29 bin29 bin46 bin46 bin46 bin46 bin46 bin31 bin31 bin31 bin31 bin31 bin47 bin47 bin47 bin47 bin47 bin32 bin32 bin32 bin32 bin32 bin50 bin50 bin50 bin50 bin50 bin35 bin35 bin35 bin35 bin35 bin45 bin45 bin45 bin45 bin45 bin30 bin30 bin30 bin30 bin30 bin48 bin48 bin48 bin48 bin48 bin33 bin33 bin33 bin33 bin33 bin51 bin51 bin51 bin51 bin51 bin36 bin36 bin36 bin36 bin36 
+process  signal_M1800 qcd ttbar wjets other signal_M1800 qcd ttbar wjets other signal_M1800 qcd ttbar wjets other signal_M1800 qcd ttbar wjets other signal_M1800 qcd ttbar wjets other signal_M1800 qcd ttbar wjets other signal_M1800 qcd ttbar wjets other signal_M1800 qcd ttbar wjets other signal_M1800 qcd ttbar wjets other signal_M1800 qcd ttbar wjets other signal_M1800 qcd ttbar wjets other signal_M1800 qcd ttbar wjets other signal_M1800 qcd ttbar wjets other signal_M1800 qcd ttbar wjets other signal_M1800 qcd ttbar wjets other signal_M1800 qcd ttbar wjets other signal_M1800 qcd ttbar wjets other signal_M1800 qcd ttbar wjets other signal_M1800 qcd ttbar wjets other signal_M1800 qcd ttbar wjets other signal_M1800 qcd ttbar wjets other signal_M1800 qcd ttbar wjets other signal_M1800 qcd ttbar wjets other signal_M1800 qcd ttbar wjets other signal_M1800 qcd ttbar wjets other signal_M1800 qcd ttbar wjets other signal_M1800 qcd ttbar wjets other signal_M1800 qcd ttbar wjets other 
+process  0 1 2 3 4 0 1 2 3 4 0 1 2 3 4 0 1 2 3 4 0 1 2 3 4 0 1 2 3 4 0 1 2 3 4 0 1 2 3 4 0 1 2 3 4 0 1 2 3 4 0 1 2 3 4 0 1 2 3 4 0 1 2 3 4 0 1 2 3 4 0 1 2 3 4 0 1 2 3 4 0 1 2 3 4 0 1 2 3 4 0 1 2 3 4 0 1 2 3 4 0 1 2 3 4 0 1 2 3 4 0 1 2 3 4 0 1 2 3 4 0 1 2 3 4 0 1 2 3 4 0 1 2 3 4 0 1 2 3 4 
+rate  0.404837  346845  1253.95  680.355  378.627  0.12779  409.93  166.24  1016.83  212.872  0.988861  134310  1361.12  225.857  184.429  0.512696  359.629  331.592  589.198  157.334  0.985447  24820.5  656.013  38.6709  46.6505  0.792957  132.204  234.604  156.952  48.6156  1.87896  124222  3646.99  265.453  569.748  0.402326  169.239  422.965  285.722  128.657  2.98624  28836  3058.13  58.8758  348.019  0.428  25.585  233.739  42.7192  48.7441  4.57976  54966.6  4565.62  102.505  361.486  1.9969  191.707  951.696  201.5  135.898  5.08992  11956.5  2286.16  18.102  111.997  3.64118  83.6792  848.022  62.5627  58.7283  8.32039  15611  4310.05  27.7555  302.458  2.99579  34.2365  760.822  43.8667  74.388  2.73671  4607.21  756.289  8.37775  92.8954  0.189349  9.78454  42.5228  3.60549  6.26974  6.83234  2676.54  1284.55  4.65815  95.5284  1.75864  4.50785  148.973  5.8986  18.0811  3.15632  366.73  219.06  0.952244  21.8523  0.540578  0.307015  21.3792  0.584517  2.32267  10.4872  4005.76  2532.49  6.07125  114.396  6.66779  36.0832  870.141  17.2759  45.53  10.2081  848.283  897.838  1.42453  47.5253  5.33923  10.4027  237.689  2.83887  15.6659  6.18813  116.696  214.956  0.366393  18.2472  2.67094  0.384159  50.313  0.425326  4.68642  
+------------------------------------
+trigeff_2016       lnN  1.01 - - - 1.01  1.01 - - - 1.01  1.01 - - - 1.01  1.01 - - - 1.01  1.01 - - - 1.01  1.01 - - - 1.01  1.01 - - - 1.01  1.01 - - - 1.01  1.01 - - - 1.01  1.01 - - - 1.01  1.01 - - - 1.01  1.01 - - - 1.01  1.01 - - - 1.01  1.01 - - - 1.01  1.01 - - - 1.01  1.01 - - - 1.01  1.01 - - - 1.01  1.01 - - - 1.01  1.01 - - - 1.01  1.01 - - - 1.01  1.01 - - - 1.01  1.01 - - - 1.01  1.01 - - - 1.01  1.01 - - - 1.01  1.01 - - - 1.01  1.01 - - - 1.01  1.01 - - - 1.01  1.01 - - - 1.01 
+
+------------------------------------

@@ -1,0 +1,29 @@
+root [0]
+Attaching file result_kappa_2024.root as _file0...
+(TFile *) 0x5621335c28d0
+root [1] hist_kappa1->Print("all")
+TH1.Print Name  = hist_kappa1, Entries= 9, Total sum= 7.10059
+ fSumw[0]=0, x=-0.5, error=0
+ fSumw[1]=1.01465, x=0.5, error=0.0818838
+ fSumw[2]=1.19698, x=1.5, error=0.0882554
+ fSumw[3]=0.907935, x=2.5, error=0.00925139
+ fSumw[4]=0.190848, x=3.5, error=4.97152
+ fSumw[5]=-0.255134, x=4.5, error=6.43538
+ fSumw[6]=1.0453, x=5.5, error=2.23806
+ fSumw[7]=1, x=6.5, error=0
+ fSumw[8]=1, x=7.5, error=0
+ fSumw[9]=1, x=8.5, error=0
+ fSumw[10]=0, x=9.5, error=0
+root [2] hist_kappa2->Print("all")
+TH1.Print Name  = hist_kappa2, Entries= 9, Total sum= 8.34844
+ fSumw[0]=0, x=-0.5, error=0
+ fSumw[1]=0.946225, x=0.5, error=0.0829969
+ fSumw[2]=1.07372, x=1.5, error=0.0894178
+ fSumw[3]=0.801123, x=2.5, error=0.0232572
+ fSumw[4]=0, x=3.5, error=-nan
+ fSumw[5]=2.52737, x=4.5, error=1.01815
+ fSumw[6]=0, x=5.5, error=-nan
+ fSumw[7]=1, x=6.5, error=0
+ fSumw[8]=1, x=7.5, error=0
+ fSumw[9]=1, x=8.5, error=0
+ fSumw[10]=0, x=9.5, error=0

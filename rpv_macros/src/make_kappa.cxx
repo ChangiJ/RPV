@@ -107,7 +107,7 @@ int main(int argc, char *argv[]){
     return 0;
   }
 
-  if(!(year=="2016"||year=="2017"||year=="2018"||year=="20178")) return 0;
+  if(!(year=="2016"||year=="2017"||year=="2018"||year=="20178"||year=="2023")) return 0; // 250902
 
   vector<TString> years;
 
@@ -127,6 +127,7 @@ int main(int argc, char *argv[]){
       if(iyear=="2016") lumi = 36.3;
       else if(iyear=="2017") lumi = 41.5;
       else if(iyear=="2018") lumi = 59.7;
+      else if(iyear=="2023") lumi = 300;
     }
     cout<<argc<<endl;
 
@@ -389,7 +390,7 @@ int genMConly(TFile *f, bool mconly){
       if(temp_eval_=="morph") data_obs->SetBinContent(i, (qcd->GetBinContent(i) + ttbar->GetBinContent(i) + wjets->GetBinContent(i) + other->GetBinContent(i))*morphBin.at(i-1));
       else data_obs->SetBinContent(i, (qcd->GetBinContent(i) + ttbar->GetBinContent(i) + wjets->GetBinContent(i) + other->GetBinContent(i)));
       if(debug) cout<<"bin : " << ibin << "|| Content : " <<(qcd->GetBinContent(i) + ttbar->GetBinContent(i) + wjets->GetBinContent(i) + other->GetBinContent(i)) << "\n qcd :" << qcd->GetBinContent(i) << "\n ttbar : " << ttbar->GetBinContent(i) << "\n wjets : " << wjets->GetBinContent(i) << "\n other : " << other->GetBinContent(i) << endl;
-      data_obs->SetBinError(i, TMath::Sqrt(data_obs->GetBinContent(i)));
+      data_obs->SetBinError(i, TMath::Sqrt(fabs(data_obs->GetBinContent(i)))); // 250902
     }
     gDirectory->cd(Form("/bin%d",ibin));
     data_obs->Write("",TObject::kOverwrite);

@@ -1,0 +1,38 @@
+Combination of datacards/datacard_M2400_mconly_cr_nb0_lownjets_nopdfoutput_nominal_newnt_2023.dat  datacards/datacard_M2400_mconly_cr_nb0_mednjets_nopdfoutput_nominal_newnt_2023.dat  datacards/datacard_M2400_mconly_cr_nb1_lownjets_nopdfoutput_nominal_newnt_2023.dat  datacards/datacard_M2400_mconly_cr_nb1_mednjets_nopdfoutput_nominal_newnt_2023.dat  datacards/datacard_M2400_mconly_cr_nb2_lownjets_nopdfoutput_nominal_newnt_2023.dat  datacards/datacard_M2400_mconly_sr_nb2_mednjets_nopdfoutput_nominal_newnt_2023.dat
+imax 12 number of bins
+jmax 4 number of processes minus 1
+kmax 0 number of nuisance parameters
+----------------------------------------------------------------------------------------------------------------------------------
+shapes *          ch1_bin22  datacards/variations/output_nominal_newnt_2023.root bin22/$PROCESS bin22/$PROCESS_$SYSTEMATIC
+shapes *          ch1_bin37  datacards/variations/output_nominal_newnt_2023.root bin37/$PROCESS bin37/$PROCESS_$SYSTEMATIC
+shapes *          ch2_bin23  datacards/variations/output_nominal_newnt_2023.root bin23/$PROCESS bin23/$PROCESS_$SYSTEMATIC
+shapes *          ch2_bin38  datacards/variations/output_nominal_newnt_2023.root bin38/$PROCESS bin38/$PROCESS_$SYSTEMATIC
+shapes *          ch3_bin25  datacards/variations/output_nominal_newnt_2023.root bin25/$PROCESS bin25/$PROCESS_$SYSTEMATIC
+shapes *          ch3_bin40  datacards/variations/output_nominal_newnt_2023.root bin40/$PROCESS bin40/$PROCESS_$SYSTEMATIC
+shapes *          ch4_bin26  datacards/variations/output_nominal_newnt_2023.root bin26/$PROCESS bin26/$PROCESS_$SYSTEMATIC
+shapes *          ch4_bin41  datacards/variations/output_nominal_newnt_2023.root bin41/$PROCESS bin41/$PROCESS_$SYSTEMATIC
+shapes *          ch5_bin28  datacards/variations/output_nominal_newnt_2023.root bin28/$PROCESS bin28/$PROCESS_$SYSTEMATIC
+shapes *          ch5_bin43  datacards/variations/output_nominal_newnt_2023.root bin43/$PROCESS bin43/$PROCESS_$SYSTEMATIC
+shapes *          ch6_bin29  datacards/variations/output_nominal_newnt_2023.root bin29/$PROCESS bin29/$PROCESS_$SYSTEMATIC
+shapes *          ch6_bin44  datacards/variations/output_nominal_newnt_2023.root bin44/$PROCESS bin44/$PROCESS_$SYSTEMATIC
+----------------------------------------------------------------------------------------------------------------------------------
+bin          ch1_bin37  ch1_bin22  ch2_bin38  ch2_bin23  ch3_bin40  ch3_bin25  ch4_bin41  ch4_bin26  ch5_bin43  ch5_bin28  ch6_bin44  ch6_bin29
+observation  0          0          0          0          0          0          0          0          0          0          0          0        
+----------------------------------------------------------------------------------------------------------------------------------
+bin          ch1_bin37     ch1_bin37     ch1_bin37     ch1_bin37     ch1_bin37     ch1_bin22     ch1_bin22     ch1_bin22     ch1_bin22     ch1_bin22     ch2_bin38     ch2_bin38     ch2_bin38     ch2_bin38     ch2_bin38     ch2_bin23     ch2_bin23     ch2_bin23     ch2_bin23     ch2_bin23     ch3_bin40     ch3_bin40     ch3_bin40     ch3_bin40     ch3_bin40     ch3_bin25     ch3_bin25     ch3_bin25     ch3_bin25     ch3_bin25     ch4_bin41     ch4_bin41     ch4_bin41     ch4_bin41     ch4_bin41     ch4_bin26     ch4_bin26     ch4_bin26     ch4_bin26     ch4_bin26     ch5_bin43     ch5_bin43     ch5_bin43     ch5_bin43     ch5_bin43     ch5_bin28     ch5_bin28     ch5_bin28     ch5_bin28     ch5_bin28     ch6_bin44     ch6_bin44     ch6_bin44     ch6_bin44     ch6_bin44     ch6_bin29     ch6_bin29     ch6_bin29     ch6_bin29     ch6_bin29   
+process      signal_M2400  qcd           ttbar         wjets         other         signal_M2400  qcd           ttbar         wjets         other         signal_M2400  qcd           ttbar         wjets         other         signal_M2400  qcd           ttbar         wjets         other         signal_M2400  qcd           ttbar         wjets         other         signal_M2400  qcd           ttbar         wjets         other         signal_M2400  qcd           ttbar         wjets         other         signal_M2400  qcd           ttbar         wjets         other         signal_M2400  qcd           ttbar         wjets         other         signal_M2400  qcd           ttbar         wjets         other         signal_M2400  qcd           ttbar         wjets         other         signal_M2400  qcd           ttbar         wjets         other       
+process      0             1             2             3             4             0             1             2             3             4             0             1             2             3             4             0             1             2             3             4             0             1             2             3             4             0             1             2             3             4             0             1             2             3             4             0             1             2             3             4             0             1             2             3             4             0             1             2             3             4             0             1             2             3             4             0             1             2             3             4           
+rate         0.0657298     2452700       5395.4        6246.13       603.943       0.0328649     2144.44       544.9         9862.65       118.029       0.115027      796736        4598.56       1854.29       177.761       0.0712073     1788.78       735.703       5326.75       64.2064       0.657298      782825        30062.7       2204.34       283.059       0.191712      927.37        2404.89       2636.21       44.029        1.32555       306736        29366.3       764.405       89.2976       0.673731      929.174       3959.42       1748.08       26.9243       2.37721       231133        40016.9       569.754       78.2977       0.372469      200.476       2461.75       513.931       14.286        4.68321       106500        45771.6       247.99        43.0491       1.72541       221.032       5085.77       451.718       9.03044     
+----------------------------------------------------------------------------------------------------------------------------------
+ch1_bin37 autoMCStats 0 0 1
+ch1_bin22 autoMCStats 0 0 1
+ch2_bin38 autoMCStats 0 0 1
+ch2_bin23 autoMCStats 0 0 1
+ch3_bin40 autoMCStats 0 0 1
+ch3_bin25 autoMCStats 0 0 1
+ch4_bin41 autoMCStats 0 0 1
+ch4_bin26 autoMCStats 0 0 1
+ch5_bin43 autoMCStats 0 0 1
+ch5_bin28 autoMCStats 0 0 1
+ch6_bin44 autoMCStats 0 0 1
+ch6_bin29 autoMCStats 0 0 1

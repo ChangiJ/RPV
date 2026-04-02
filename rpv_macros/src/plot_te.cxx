@@ -21,7 +21,8 @@
 #include "small_tree_rpv.hpp"
 #include "utilities.hpp"
 #include "utilities_macros.hpp"
-#include "utilities_macros_rpv.hpp"
+//#include "utilities_macros_rpv.hpp"
+#include "utilities_macros_rpv_Run3.hpp"
 
 using namespace std;
 
@@ -40,7 +41,8 @@ int main(int argc, char *argv[])
 	if(procname == "data"){ 
 		folder_singlemuon = folder_year(year,true).at(0);
 		folder_jetht      = folder_year(year,false).at(1);
-		//folder = "/mnt/data3/babies/241201/"+year+"/merged_singlemu_data/";
+		//folder = "/mnt/data3/babies/260312/"+year+"/merged_singlemu_data/";
+		//folder_singlemuon = "/mnt/data3/trigeff_test/skimmed_260325_trigeff_data/"+year; // CG
 		vector<TString> s_singlemuon = getRPVProcess(folder_singlemuon,"data_te");
 		vector<TString> s_jetht      = getRPVProcess(folder_jetht,"data");
 		s_proc = s_singlemuon; 
@@ -166,6 +168,10 @@ void make_te(small_tree_rpv &tree, TFile *f, TString year, TString procname){
 				trig=(tree.trig_ht1050());
 				trig_mu=(tree.trig_isomu27());
 			}
+			else if(year=="2022" || year == "2023" || year == "2024") { 				// CG
+				trig=(tree.trig_ht1050());
+				trig_mu=(tree.trig_isomu27());
+			}
 			if(ibin==0) nomweight = nomweight;
 			else nomweight = (tree.ht()>1200)*nomweight;
 			h1den[ibin]->Fill(var_p>max[ibin]?max[ibin]:var_p,nomweight*trig_mu);
@@ -186,10 +192,11 @@ void make_te(small_tree_rpv &tree, TFile *f, TString year, TString procname){
 		if(year=="UL2016_postVFP") lumi = "16.8";
 		if(year=="2017") lumi = "41.5";
 		if(year=="2018") lumi = "59.8";
+		if(year=="2022") lumi = "5.01";  // CG
+		if(year=="2024") lumi = "109.95";  // CG
 
 		TString cmslabel = "#font[62]{CMS} #scale[0.8]{#font[52]{Work In Progress}}";
-		TString lumilabel = TString::Format("%1.1f", lumi.Atof())+" fb^{-1}, 13 TeV";
-
+		TString lumilabel = TString::Format("%1.1f", lumi.Atof())+" fb^{-1}, 13.6 TeV"; // CG, Originally 13 TeV
 		h1ineff[ibin] = dynamic_cast<TH1D*>(h1num[ibin]->Clone("h1_eff"));
 		h1ineff[ibin]->Divide(h1innum[ibin],h1den[ibin],1,1,"B");
 		h1innum[ibin]->Write();

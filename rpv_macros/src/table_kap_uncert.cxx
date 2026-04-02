@@ -24,8 +24,32 @@ int main(int argc, char* argv[])
     TString year     = argv[1];
     TString filename = argv[2];
 
-    TFile* infile = TFile::Open(filename, "READ"); 
+	TFile* infile = TFile::Open(filename, "READ"); 
+/*
+	//====================================== CG added the codes line below: (Not necessary)=====================================================================
+	vector<TString> filenames;
 
+	if (year == "UL2016_preVFP") {
+			filenames.push_back("output_impact_UL2016_preVFP_UL2016.root");
+	} 
+	else if (year == "UL2016_postVFP") {
+			filenames.push_back("output_impact_UL2016_postVFP_UL2016.root");
+	} 
+	else if (year == "UL2017") {
+			filenames.push_back("output_impact_UL2017_UL20178.root");
+	} 
+	else if (year == "UL2018") {
+			filenames.push_back("output_impact_UL2018_UL20178.root");
+	} 
+	else if (year == "UL201678") {
+			filenames.push_back("output_impact_merged_UL201678.root");
+	} 
+	else {
+			cout << "ERROR: Invalid year argument. Use UL2016_preVFP, UL2016_postVFP, UL2017, UL2018 or UL201678" << endl;
+			return 1;
+	}
+	//=============================================================================================================================================
+*/
     const int nbins = 37;
     float kap_qcd_up[2][nbins],     mckap_qcd_up[2][nbins],     mjsyst_qcd_up[2][nbins],                                      tot_qcd_up[2][nbins],
           kap_qcd_down[2][nbins],   mckap_qcd_down[2][nbins],   mjsyst_qcd_down[2][nbins],                                    tot_qcd_down[2][nbins],
@@ -133,14 +157,24 @@ int main(int argc, char* argv[])
     /////////////// QCD ///////////////
     ///////////////////////////////////
 
+    TString latex_year;
+    latex_year=year;
+    if(year=="UL2016_preVFP") latex_year="2016preVFP";
+    else if(year=="UL2016_postVFP") latex_year="2016postVFP";
+    else if(year=="UL2016") latex_year="2016";
+    else if(year=="UL2017") latex_year="2017";
+    else if(year=="UL2018") latex_year="2018";
+    else if(year=="UL20178") latex_year="20178";
+	else if(year=="UL201678") latex_year="201678";
+
     if(formatLatex) {
       cout << "\\begin{table}" << endl;
       cout << "\\centering" << endl;
-      cout << Form("\\caption{The summary table of the uncertainties in the kappa factor for QCD process using %s samples.}", year.Data()) << endl;
+      cout << Form("\\caption{The summary table of the uncertainties in the kappa factor for QCD process using %s samples.}", latex_year.Data()) << endl;
       cout << "\\resizebox{\\textwidth}{!}{" << endl;
       cout << "\\begin{tabular}[tbp!]{|c|c|cccccccc|cccccccc|cccccccc|}" << endl;
       cout << "\\hline" << endl;
-      cout << "\\multicolumn{2}{|c|}{\\multirow{3}{*}{}} & \\multicolumn{8}{c|}{$4\\leq \\Njet \\leq5$} & \\multicolumn{8}{c|}{$6\\leq \\Njet \\leq7$} & \\multicolumn{8}{c|}{$8\\leq \\Njet$} \\\\" << endl;
+      cout << "\\multicolumn{2}{|c|}{\\multirow{}{}{}} & \\multicolumn{8}{c|}{$4\\leq \N_{jet} \\leq5$} & \\multicolumn{8}{c|}{$6\\leq \N_{jet} \\leq7$} & \\multicolumn{8}{c|}{$8\\leq \N_{jet}$} \\\\" << endl;
       cout << "\\hline\\hline" << endl;
       
       cout << " \\multicolumn{2}{|c|}{} & \\multicolumn{2}{c}{data kappa} & \\multicolumn{2}{c}{MC kappa} & \\multicolumn{2}{c}{$\\MJ$ shape} & \\multicolumn{2}{c|}{total} & \\multicolumn{2}{c}{data kappa} & \\multicolumn{2}{c}{MC kappa} & \\multicolumn{2}{c}{$\\MJ$ shape} & \\multicolumn{2}{c|}{total} & \\multicolumn{2}{c}{data kappa} & \\multicolumn{2}{c}{MC kappa} & \\multicolumn{2}{c}{$\\MJ$ shape} & \\multicolumn{2}{c|}{total} \\\\" << endl;
@@ -149,7 +183,7 @@ int main(int argc, char* argv[])
       for(int ibin=23; ibin<nbins; ibin+=3) {
         int inb = int(ibin-23)/3;
         if(inb==0) {
-      	  cout << Form("\\multirow{2}{*}{$\\Nb=%d$} & $+1\\sigma$ &", inb)
+      	  cout << Form("\\multirow{}{}{$\N_{b}=%d$} & $+1\\sigma$ &", inb)
       	       << Form("%.2f", kap_qcd_up[0][ibin-1])    << " & " << Form("%.2f", kap_qcd_up[1][ibin-1])    << " & "
       	       << Form("%s",   notapply.Data())          << " & " << Form("%s",   notapply.Data())          << " & "
       	       << Form("%s",   notapply.Data())          << " & " << Form("%s",   notapply.Data())          << " & "
@@ -180,7 +214,7 @@ int main(int argc, char* argv[])
 	  cout << "\\hline" << endl;
 	}
 	else if(ibin==35) {
-      	  cout << Form("\\multirow{2}{*}{$\\Nb\\ge%d$} & $+1\\sigma$ &", inb)
+      	  cout << Form("\\multirow{}{}{$\N_{b}\\ge%d$} & $+1\\sigma$ &", inb)
       	       << " & & "
       	       << " & & "
       	       << " & & "
@@ -211,7 +245,7 @@ int main(int argc, char* argv[])
 	  cout << "\\hline" << endl;
 	}
 	else {
-      	  cout << Form("\\multirow{2}{*}{$\\Nb=%d$} & $+1\\sigma$ &", inb)
+      	  cout << Form("\\multirow{}{}{$\N_{b}=%d$} & $+1\\sigma$ &", inb)
       	       << Form("%.2f", kap_qcd_up[0][ibin-1])    << " & " << Form("%.2f", kap_qcd_up[1][ibin-1])    << " & "
       	       << Form("%.2f", mckap_qcd_up[0][ibin-1])  << " & " << Form("%.2f", mckap_qcd_up[1][ibin-1])  << " & "
       	       << Form("%s",   notapply.Data())          << " & " << Form("%s",   notapply.Data())          << " & "
@@ -244,6 +278,7 @@ int main(int argc, char* argv[])
       }
       cout << "\\end{tabular}"<<endl;
       cout << "}" << endl;
+      cout << Form("\\label{tab:kap_unc_table_qcd_%s}", year.Data()) << endl;
       cout << "\\end{table}\n"; 
       cout << endl;
     }
@@ -257,11 +292,11 @@ int main(int argc, char* argv[])
     if(formatLatex) {
       cout << "\\begin{table}" << endl;
       cout << "\\centering" << endl;
-      cout << Form("\\caption{The summary table of the uncertainties in the kappa factor for $\\wjets$ process using %s samples.}", year.Data()) << endl;
+      cout << Form("\\caption{The summary table of the uncertainties in the kappa factor for $\W+jets$ process using %s samples.}", latex_year.Data()) << endl;
       cout << "\\resizebox{\\textwidth}{!}{" << endl;
       cout << "\\begin{tabular}[tbp!]{|c|c|cccccccccc|cccccccccc|cccccccccc|}" << endl;
       cout << "\\hline" << endl;
-      cout << "\\multicolumn{2}{|c|}{\\multirow{3}{*}{}} & \\multicolumn{10}{c|}{$4\\leq \\Njet \\leq5$} & \\multicolumn{10}{c|}{$6\\leq \\Njet \\leq7$} & \\multicolumn{10}{c|}{$8\\leq \\Njet$} \\\\" << endl;
+      cout << "\\multicolumn{2}{|c|}{\\multirow{}{}{}} & \\multicolumn{10}{c|}{$4\\leq \N_{jet} \\leq5$} & \\multicolumn{10}{c|}{$6\\leq \N_{jet} \\leq7$} & \\multicolumn{10}{c|}{$8\\leq \N_{jet}$} \\\\" << endl;
       cout << "\\hline\\hline" << endl;
       
       cout << " \\multicolumn{2}{|c|}{} & \\multicolumn{2}{c}{data kappa} & \\multicolumn{2}{c}{MC kappa} & \\multicolumn{2}{c}{$\\MJ$ shape} & \\multicolumn{2}{c}{DY $\\MJ$ shape} & \\multicolumn{2}{c|}{total} & \\multicolumn{2}{c}{data kappa} & \\multicolumn{2}{c}{MC kappa} & \\multicolumn{2}{c}{$\\MJ$ shape} & \\multicolumn{2}{c}{DY $\\MJ$ shape} & \\multicolumn{2}{c|}{total} & \\multicolumn{2}{c}{data kappa} & \\multicolumn{2}{c}{MC kappa} & \\multicolumn{2}{c}{$\\MJ$ shape} & \\multicolumn{2}{c}{DY $\\MJ$ shape} & \\multicolumn{2}{c|}{total} \\\\" << endl;
@@ -270,7 +305,7 @@ int main(int argc, char* argv[])
       for(int ibin=23; ibin<nbins; ibin+=3) {
         int inb = int(ibin-23)/3;
 	if (inb==0) {
-	  cout << Form("\\multirow{2}{*}{$\\Nb=%d$} & $+1\\sigma$ &", inb)
+	  cout << Form("\\multirow{}{}{$\N_{b}=%d$} & $+1\\sigma$ &", inb)
       	       << Form("%.2f", kap_wjets_up[0][ibin-1])           << " & " << Form("%.2f", kap_wjets_up[1][ibin-1])           << " & "
       	       << Form("%s",   notapply.Data())                   << " & " << Form("%s",   notapply.Data())                   << " & "
       	       << Form("%s",   notapply.Data())                   << " & " << Form("%s",   notapply.Data())                   << " & "
@@ -307,7 +342,7 @@ int main(int argc, char* argv[])
 	  cout << "\\hline" << endl;
 	}
 	else if(ibin==35) {
-      	  cout << Form("\\multirow{2}{*}{$\\Nb\\ge%d$} & $+1\\sigma$ &", inb)
+      	  cout << Form("\\multirow{}{}{$\N_{b}\\ge%d$} & $+1\\sigma$ &", inb)
       	       << " & & "
       	       << " & & "
       	       << " & & "
@@ -344,7 +379,7 @@ int main(int argc, char* argv[])
 	  cout << "\\hline" << endl;
 	}
 	else {
-      	  cout << Form("\\multirow{2}{*}{$\\Nb=%d$} & $+1\\sigma$ &", inb)
+      	  cout << Form("\\multirow{}{}{$\N_{b}=%d$} & $+1\\sigma$ &", inb)
       	       << Form("%.2f", kap_wjets_up[0][ibin-1])           << " & " << Form("%.2f", kap_wjets_up[1][ibin-1])           << " & "
       	       << Form("%.2f", mckap_wjets_up[0][ibin-1])         << " & " << Form("%.2f", mckap_wjets_up[1][ibin-1])         << " & "
       	       << Form("%.2f", mjsyst_wjets_up[0][ibin-1])        << " & " << Form("%.2f", mjsyst_wjets_up[1][ibin-1])        << " & "
@@ -383,6 +418,7 @@ int main(int argc, char* argv[])
       }
       cout << "\\end{tabular}"<<endl;
       cout << "}" << endl;
+      cout << Form("\\label{tab:kap_unc_table_wjets_%s}", year.Data()) << endl;
       cout << "\\end{table}\n"; 
       cout << endl;
     }
@@ -396,11 +432,11 @@ int main(int argc, char* argv[])
     if(formatLatex) {
       cout << "\\begin{table}" << endl;
       cout << "\\centering" << endl;
-      cout << Form("\\caption{The summary table of the uncertainties in the kappa factor for $\\ttbar$ process using %s samples.}", year.Data()) << endl;
+      cout << Form("\\caption{The summary table of the uncertainties in the kappa factor for $t\\bar{t}$ process using %s samples.}", latex_year.Data()) << endl;
       cout << "\\resizebox{\\textwidth}{!}{" << endl;
       cout << "\\begin{tabular}[tbp!]{|c|c|cccccccc|cccccccc|cccccccc|}" << endl;
       cout << "\\hline" << endl;
-      cout << "\\multicolumn{2}{|c|}{\\multirow{3}{*}{}} & \\multicolumn{8}{c|}{$4\\leq \\Njet \\leq5$} & \\multicolumn{8}{c|}{$6\\leq \\Njet \\leq7$} & \\multicolumn{8}{c|}{$8\\leq \\Njet$} \\\\" << endl;
+      cout << "\\multicolumn{2}{|c|}{\\multirow{}{}{}} & \\multicolumn{8}{c|}{$4\\leq \N_{jet} \\leq5$} & \\multicolumn{8}{c|}{$6\\leq \N_{jet} \\leq7$} & \\multicolumn{8}{c|}{$8\\leq \N_{jet}$} \\\\" << endl;
       cout << "\\hline\\hline" << endl;
       
       cout << " \\multicolumn{2}{|c|}{} & \\multicolumn{2}{c}{data kappa} & \\multicolumn{2}{c}{MC kappa} & \\multicolumn{2}{c}{$\\MJ$ shape} & \\multicolumn{2}{c|}{total} & \\multicolumn{2}{c}{data kappa} & \\multicolumn{2}{c}{MC kappa} & \\multicolumn{2}{c}{$\\MJ$ shape} & \\multicolumn{2}{c|}{total} & \\multicolumn{2}{c}{data kappa} & \\multicolumn{2}{c}{MC kappa} & \\multicolumn{2}{c}{$\\MJ$ shape} & \\multicolumn{2}{c|}{total} \\\\" << endl;
@@ -409,7 +445,7 @@ int main(int argc, char* argv[])
       for(int ibin=23; ibin<nbins; ibin+=3) {
         int inb = int(ibin-23)/3;
 	if (inb==0) {
-	  cout << Form("\\multirow{2}{*}{$\\Nb=%d$} & $+1\\sigma$ &", inb)
+	  cout << Form("\\multirow{}{}{$\N_{b}=%d$} & $+1\\sigma$ &", inb)
       	       << Form("%.2f", kap_ttbar_up[0][ibin-1])    << " & " << Form("%.2f", kap_ttbar_up[1][ibin-1])    << " & "
       	       << Form("%s",   notapply.Data())            << " & " << Form("%s",   notapply.Data())            << " & "
       	       << Form("%.2f", mjsyst_ttbar_up[0][ibin-1]) << " & " << Form("%.2f", mjsyst_ttbar_up[1][ibin-1]) << " & "
@@ -440,7 +476,7 @@ int main(int argc, char* argv[])
 	  cout << "\\hline" << endl;
 	}
 	else if (inb==1) {
-      	  cout << Form("\\multirow{2}{*}{$\\Nb=%d$} & $+1\\sigma$ &", inb)
+      	  cout << Form("\\multirow{}{}{$\N_{b}=%d$} & $+1\\sigma$ &", inb)
       	       << Form("%.2f", kap_ttbar_up[0][ibin-1])    << " & " << Form("%.2f", kap_ttbar_up[1][ibin-1])    << " & "
       	       << Form("%.2f", mckap_ttbar_up[0][ibin-1])  << " & " << Form("%.2f", mckap_ttbar_up[1][ibin-1])  << " & "
       	       << Form("%s",   notapply.Data())            << " & " << Form("%s",   notapply.Data())            << " & "
@@ -471,7 +507,7 @@ int main(int argc, char* argv[])
 	  cout << "\\hline" << endl;
 	}
 	else if(ibin==35) {
-      	  cout << Form("\\multirow{2}{*}{$\\Nb\\ge%d$} & $+1\\sigma$ &", inb)
+      	  cout << Form("\\multirow{}{}{$\N_{b}\\ge%d$} & $+1\\sigma$ &", inb)
       	       << " & & "
       	       << " & & "
       	       << " & & "
@@ -502,7 +538,7 @@ int main(int argc, char* argv[])
 	  cout << "\\hline" << endl;
 	}
 	else {
-      	  cout << Form("\\multirow{2}{*}{$\\Nb=%d$} & $+1\\sigma$ &", inb)
+      	  cout << Form("\\multirow{}{}{$\N_{b}=%d$} & $+1\\sigma$ &", inb)
       	       << Form("%.2f", kap_ttbar_up[0][ibin-1])    << " & " << Form("%.2f", kap_ttbar_up[1][ibin-1])    << " & "
       	       << Form("%.2f", mckap_ttbar_up[0][ibin-1])  << " & " << Form("%.2f", mckap_ttbar_up[1][ibin-1])  << " & "
       	       << Form("%.2f", mjsyst_ttbar_up[0][ibin-1]) << " & " << Form("%.2f", mjsyst_ttbar_up[1][ibin-1]) << " & "
@@ -535,6 +571,7 @@ int main(int argc, char* argv[])
       }
       cout << "\\end{tabular}"<<endl;
       cout << "}" << endl;
+      cout << Form("\\label{tab:kap_unc_table_ttbar_%s}", year.Data()) << endl;
       cout << "\\end{table}\n"; 
       cout << endl;
     }
@@ -554,7 +591,8 @@ float getKappaUnc(TString filename, TString procname, int ikap, int ibin, TStrin
   TFile* infile = TFile::Open(filename, "READ");
   TString year;
   if(filename.Contains("2016")) year = "2016";
-  else if(filename.Contains("2017")||filename.Contains("2018")||filename.Contains("20178")) year = "20178";
+  else if(filename.Contains("2017")||filename.Contains("2018")||filename.Contains("20178")||filename.Contains("1718")) year = "1718";
+  else if(filename.Contains("merged")) year = "201678";
   else {
     cout << "ERROR: The inputfile name should include the year" << endl;
     return 0;
@@ -569,6 +607,7 @@ float getKappaUnc(TString filename, TString procname, int ikap, int ibin, TStrin
   float kap_jec_up=0, kap_jec_down=0, kap_jer_up=0, kap_jer_down=0;
 
   if(syst=="kappa") {
+	cout << year.Data() << endl;
     h_nominal = static_cast<TH1F*>(infile->Get(Form("bin%i/%s", ibin, procname.Data())));
     h_up      = static_cast<TH1F*>(infile->Get(Form("bin%i/%s_kappa%d_njets%d_%s_%sUp", ibin, procname.Data(), ikap, ind_ijet, procname.Data(), year.Data())));
     h_down    = static_cast<TH1F*>(infile->Get(Form("bin%i/%s_kappa%d_njets%d_%s_%sDown", ibin, procname.Data(), ikap, ind_ijet, procname.Data(), year.Data())));
@@ -623,4 +662,3 @@ float getKappaUnc(TString filename, TString procname, int ikap, int ibin, TStrin
   else if(updown=="down") return ratio_down;
   else return 0;
 }
-

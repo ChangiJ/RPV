@@ -672,7 +672,7 @@ void printYieldBin(int nb, float data,
     }
 
     float tot_err = TMath::Sqrt(qcd_err*qcd_err+ttbar_err*ttbar_err+wjets_err*wjets_err+other_err*other_err);
-  
+
     if(printErr) 
     {
     cout << nbbin << " & "
@@ -695,7 +695,6 @@ void printYieldBin(int nb, float data,
         << Form("$%.0f$",data) << " & "
         << Form("$%.1f$",sig) << " \\\\ " << endl;
     }
-
 }
 
 float addInQuad(float a, float b)

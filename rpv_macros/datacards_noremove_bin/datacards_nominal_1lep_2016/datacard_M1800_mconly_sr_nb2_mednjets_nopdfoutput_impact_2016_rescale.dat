@@ -1,0 +1,18 @@
+imax 2 number of bins
+jmax 4
+kmax * number of nuisance parameters
+------------------------------------
+shapes * bin44 variations/output_impact_2016_rescale.root bin44/$PROCESS bin44/$PROCESS_$SYSTEMATIC
+shapes * bin29 variations/output_impact_2016_rescale.root bin29/$PROCESS bin29/$PROCESS_$SYSTEMATIC
+------------------------------------
+bin          bin44 bin29 
+observation  20251.3 913.313 
+------------------------------------
+bin  bin44 bin44 bin44 bin44 bin44 bin29 bin29 bin29 bin29 bin29 
+process  signal_M1800 qcd ttbar wjets other signal_M1800 qcd ttbar wjets other 
+process  0 1 2 3 4 0 1 2 3 4 
+rate  8.32039  15611  4310.05  27.7555  302.458  2.99579  34.2365  760.822  43.8667  74.388  
+------------------------------------
+trigeff_2016       lnN  1.01 - - - 1.01  1.01 - - - 1.01 
+
+------------------------------------

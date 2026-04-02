@@ -34,10 +34,12 @@ std::string cutandweight(std::string cut, std::string weight)
 std::vector<TString> getRPVProcess(TString folder, TString process){
 	std::vector<TString> files;
 	if(process=="data"){
-		files.push_back(folder+"*Run201*");
+		files.push_back(folder+"*Run201*");  // CG, Originally: files.push_back(folder+"*Run201*"); 
+		//files.push_back(folder+"*.root");  // CG, Originally: files.push_back(folder+"*Run201*"); 
 	}
 	else if(process=="data_te"){
-		files.push_back(folder+"*Run201*");
+		files.push_back(folder+"*Run201*"); // Original: files.push_back(folder+"*Run201*");
+		//files.push_back(folder+"*.root"); // Original: files.push_back(folder+"*Run201*");
 	}
 	else if(process.Contains("rpv")){
 		if(process=="rpv_m1000") files.push_back(folder+"*mGluino*1000*");
@@ -53,6 +55,9 @@ std::vector<TString> getRPVProcess(TString folder, TString process){
 		else if(process=="rpv_m2000") files.push_back(folder+"*mGluino*2000*");
 		else if(process=="rpv_m2100") files.push_back(folder+"*mGluino*2100*");
 		else if(process=="rpv_m2200") files.push_back(folder+"*mGluino*2200*");
+		else if(process=="rpv_m2300") files.push_back(folder+"*mGluino*2300*");
+		else if(process=="rpv_m2400") files.push_back(folder+"*mGluino*2400*");
+		else if(process=="rpv_m2500") files.push_back(folder+"*mGluino*2500*");
 	}
 	else if(process.Contains("mStop")){
 		if(process=="mStop_300") files.push_back(folder+"*mStop-300*");
@@ -91,6 +96,7 @@ std::vector<TString> getRPVProcess(TString folder, TString process){
 		files.push_back(folder+"TTJets_Tune*");
 		//files.push_back(folder+"*TTJets_inclusive*");
 		files.push_back(folder+"TTJets_HT*");
+	//	files.push_back(folder+"TTto*"); // 250902
 	}
 	//Separated by ntrulep to avoid looping over samples killed by sfeat ntruleps selection
 	else if(process=="ttbar_2l"){
@@ -107,11 +113,13 @@ std::vector<TString> getRPVProcess(TString folder, TString process){
 	}
 	else if(process=="qcd"){
 		files.push_back(folder+"QCD_*"); 
+	//	files.push_back(folder+"QCD-*"); // 250902
 	}
 	// For 0 or 1 lepton wjets apply a ntruleps cut at the sfeat level
 	else if(process=="wjets"){
-		files.push_back(folder+"WJetsToLNu_*"); 
-		//files.push_back(folder+"*WJetsToQQ*");//-
+		files.push_back(folder+"*WJetsToLNu*");
+	//	files.push_back(folder+"WtoLNu-4Jets_MLNu-0to120*"); // 250902
+	//	files.push_back(folder+"*WJetsToQQ*");//-
 	}
 	else if(process=="singlet"){
 		files.push_back(folder+"ST_*");
@@ -136,6 +144,7 @@ std::vector<TString> getRPVProcess(TString folder, TString process){
 	}
   else if(process=="DY"){
     files.push_back(folder+"DYJetsToLL_M-50_HT*");
+   // files.push_back(folder+"DYto2L*"); // 250902
   }
   else if(process=="other_DY"){
 		files.push_back(folder+"WJetsToLNu_*"); 

@@ -346,7 +346,7 @@ int main(int argc, char *argv[])
   
   //output if you want to see only normalizations between nleps
   //outputOnlyNormalization(file, bins.at(ipair), year);
-
+/* CG 260401
   //output the W+jet normalization and Njets connection
   outputWjets(file, bins.at(ipair), cardType, year);
 
@@ -370,7 +370,7 @@ int main(int argc, char *argv[])
   outputkappaSystematics(file, bins.at(ipair), filename, year);
 
   outputShapeSystematics(file, shapeSysts, bins.at(ipair), year);
-
+*/ // CG 260401
   if(sig_onoff=="on"){
   // output shape systematics
   

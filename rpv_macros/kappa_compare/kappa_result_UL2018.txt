@@ -1,0 +1,34 @@
+root [0]
+Attaching file result_kappa_UL2018.root as _file0...
+(TFile *) 0x55fc87353ae0
+root [1] .ls
+TFile**         result_kappa_UL2018.root
+ TFile*         result_kappa_UL2018.root
+  KEY: TH1F     hist_kappa1;1   kappa1
+  KEY: TH1F     hist_kappa2;1   kappa2
+root [2] hist_kappa1->Print("all")
+TH1.Print Name  = hist_kappa1, Entries= 9, Total sum= 8.13142
+ fSumw[0]=0, x=-0.5, error=0
+ fSumw[1]=0.970209, x=0.5, error=0.00760172
+ fSumw[2]=0.948694, x=1.5, error=0.00931312
+ fSumw[3]=0.958598, x=2.5, error=0.0159063
+ fSumw[4]=0.541101, x=3.5, error=0.283271
+ fSumw[5]=1.08144, x=4.5, error=0.187977
+ fSumw[6]=0.631379, x=5.5, error=0.324517
+ fSumw[7]=1, x=6.5, error=0
+ fSumw[8]=1, x=7.5, error=0
+ fSumw[9]=1, x=8.5, error=0
+ fSumw[10]=0, x=9.5, error=0
+root [3] hist_kappa2->Print("all")
+TH1.Print Name  = hist_kappa2, Entries= 9, Total sum= 7.85014
+ fSumw[0]=0, x=-0.5, error=0
+ fSumw[1]=0.958284, x=0.5, error=0.0212646
+ fSumw[2]=0.896128, x=1.5, error=0.0220988
+ fSumw[3]=0.895237, x=2.5, error=0.0307823
+ fSumw[4]=0.634199, x=3.5, error=0.722422
+ fSumw[5]=1.26187, x=4.5, error=0.423933
+ fSumw[6]=0.204423, x=5.5, error=1.3375
+ fSumw[7]=1, x=6.5, error=0
+ fSumw[8]=1, x=7.5, error=0
+ fSumw[9]=1, x=8.5, error=0
+ fSumw[10]=0, x=9.5, error=0

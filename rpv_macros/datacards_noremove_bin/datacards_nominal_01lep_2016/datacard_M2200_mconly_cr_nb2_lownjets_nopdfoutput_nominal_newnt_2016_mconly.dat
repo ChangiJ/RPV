@@ -1,0 +1,18 @@
+imax 2 number of bins
+jmax 4
+kmax * number of nuisance parameters
+------------------------------------
+shapes * bin43 variations/output_nominal_newnt_2016_mconly.root bin43/$PROCESS bin43/$PROCESS_$SYSTEMATIC
+shapes * bin28 variations/output_nominal_newnt_2016_mconly.root bin28/$PROCESS bin28/$PROCESS_$SYSTEMATIC
+------------------------------------
+bin          bin43 bin28 
+observation  32300.6 350.788 
+------------------------------------
+bin  bin43 bin43 bin43 bin43 bin43 bin28 bin28 bin28 bin28 bin28 
+process  signal_M2200 qcd ttbar wjets other signal_M2200 qcd ttbar wjets other 
+process  0 1 2 3 4 0 1 2 3 4 
+rate  0.399977  28836  3057.67  58.8756  348.019  0.0546682  25.585  233.739  42.7192  48.7441  
+------------------------------------
+trigeff_2016       lnN  1.01 - - - 1.01  1.01 - - - 1.01 
+
+------------------------------------

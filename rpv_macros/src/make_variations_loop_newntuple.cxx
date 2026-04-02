@@ -142,6 +142,7 @@ int main(int argc, char *argv[])
       else if(year=="UL2017") lumi = 41.5;
       else if(year=="UL2018") lumi = 59.8;
       else if(year=="2023") lumi = 300; // 250902
+      else if(year=="2024") lumi = 109.95; // 124.0: https://cds.cern.ch/record/2952191
       cout << "Luminosity        : " << lumi << "fb-1" << endl;
       if(onoff=="off") nl0shape = false; 
       cout << "There are only 5 arguments! 0 Lepton shape is entered as on..." << endl;
@@ -176,6 +177,7 @@ int main(int argc, char *argv[])
       else if(year=="UL2017") lumi = 41.5;
       else if(year=="UL2018") lumi = 59.8;
       else if(year=="2023") lumi = 300; // 250902
+      else if(year==" 2024") lumi = 109.95; 
       cout << "Luminosity        : " << lumi << "fb-1" << endl;
       if(onoff=="off") nl0shape = false; 
       cout << "Running variation : " << variations << endl;
@@ -227,6 +229,7 @@ int main(int argc, char *argv[])
       else if(year=="UL2017") lumi = 41.5;
       else if(year=="UL2018") lumi = 59.8;
       else if(year=="2023") lumi = 300; // 250902
+      else if(year=="2024") lumi = 109.95; 
       cout << "Luminosity        : " << lumi << "fb-1" << endl;
       if(onoff=="off") nl0shape = false; 
       cout << "Running variation : " << variations << endl;
@@ -267,12 +270,12 @@ int main(int argc, char *argv[])
   vector<TString> s_other = getRPVProcess(folder_bkg,"other_public");
 
   //rpv_signal
-  /*vector<TString> s_rpv_m1000 = getRPVProcess(folder_sig,"rpv_m1000");
+  vector<TString> s_rpv_m1000 = getRPVProcess(folder_sig,"rpv_m1000");
   vector<TString> s_rpv_m1100 = getRPVProcess(folder_sig,"rpv_m1100");
   vector<TString> s_rpv_m1200 = getRPVProcess(folder_sig,"rpv_m1200");
   vector<TString> s_rpv_m1300 = getRPVProcess(folder_sig,"rpv_m1300");
   vector<TString> s_rpv_m1400 = getRPVProcess(folder_sig,"rpv_m1400"); // 250902
-  */
+  
   vector<TString> s_rpv_m1500 = getRPVProcess(folder_sig,"rpv_m1500");
   vector<TString> s_rpv_m1600 = getRPVProcess(folder_sig,"rpv_m1600");
   vector<TString> s_rpv_m1700 = getRPVProcess(folder_sig,"rpv_m1700");
@@ -333,12 +336,11 @@ int main(int argc, char *argv[])
 //  for(unsigned int iother=1; iother<s_other.size(); iother++) other.Add((static_cast<std::string>(s_other.at(iother))));
 
   // rpv_signal
-/*  small_tree_rpv rpv_m1000((static_cast<std::string>(s_rpv_m1000.at(0))));
+  small_tree_rpv rpv_m1000((static_cast<std::string>(s_rpv_m1000.at(0))));
   small_tree_rpv rpv_m1100((static_cast<std::string>(s_rpv_m1100.at(0))));
   small_tree_rpv rpv_m1200((static_cast<std::string>(s_rpv_m1200.at(0))));
   small_tree_rpv rpv_m1300((static_cast<std::string>(s_rpv_m1300.at(0))));
   small_tree_rpv rpv_m1400((static_cast<std::string>(s_rpv_m1400.at(0))));
-*/
   small_tree_rpv rpv_m1500((static_cast<std::string>(s_rpv_m1500.at(0))));
   small_tree_rpv rpv_m1600((static_cast<std::string>(s_rpv_m1600.at(0))));
   small_tree_rpv rpv_m1700((static_cast<std::string>(s_rpv_m1700.at(0))));
@@ -351,13 +353,11 @@ int main(int argc, char *argv[])
   small_tree_rpv rpv_m2400((static_cast<std::string>(s_rpv_m2400.at(0))));
   small_tree_rpv rpv_m2500((static_cast<std::string>(s_rpv_m2500.at(0))));
 
-/* 
   appendTree(s_rpv_m1000, rpv_m1000);
   appendTree(s_rpv_m1100, rpv_m1100);
   appendTree(s_rpv_m1200, rpv_m1200);
   appendTree(s_rpv_m1300, rpv_m1300);
   appendTree(s_rpv_m1400, rpv_m1400);
-*/
   appendTree(s_rpv_m1500, rpv_m1500);
   appendTree(s_rpv_m1600, rpv_m1600);
   appendTree(s_rpv_m1700, rpv_m1700);
@@ -414,7 +414,7 @@ int main(int argc, char *argv[])
   // Depending on the process, turn on/off variation
 
   // data
-//  if(variations=="nominal") getSyst(data,  variations, year, f, "data_obs"); // 250902
+  if(variations=="nominal") getSyst(data,  variations, year, f, "data_obs"); // 250902
 
   // loop over a tree and get up/dawn shapes for all bins at once 
   getSyst(qcd,       variations, year, f, "qcd");
@@ -423,13 +423,13 @@ int main(int argc, char *argv[])
   getSyst(other,     variations, year, f, "other");
 
   //rpv_signal
-/*
+
   getSyst(rpv_m1000, variations, year, f, "signal_M1000");
   getSyst(rpv_m1100, variations, year, f, "signal_M1100");
   getSyst(rpv_m1200, variations, year, f, "signal_M1200");
   getSyst(rpv_m1300, variations, year, f, "signal_M1300");
   getSyst(rpv_m1400, variations, year, f, "signal_M1400");
-*/
+
   getSyst(rpv_m1500, variations, year, f, "signal_M1500");
   getSyst(rpv_m1600, variations, year, f, "signal_M1600");
   getSyst(rpv_m1700, variations, year, f, "signal_M1700");
@@ -540,13 +540,14 @@ void getSyst(small_tree_rpv &tree, TString variations, TString year, TFile *f, T
   csv_weight_file->Close();
   csv_weight_file_highnjet->Close();
   f->cd();
-/*
-  if(procname=="qcd") 
+//=============================== 각주처리 했었는데 왜 했는지 기억 안 남 260128 ============================================
+/*  if(procname=="qcd") 
   { 
     std::cout << "Reweight b jets by " << bflavorValCentral << " +/ " << bflavorValError << std::endl;
     std::cout << "Reweight c jets by " << cflavorValCentral << " +/ " << cflavorValError << std::endl;
     std::cout << "Reweight l jets by " << lflavorValCentral << " +/ " << lflavorValError << std::endl;
   }*/
+//===============================================================================================================================
   // Get GS weights 
   std::vector<double> gs_dmc={1,1,1,1};
   std::vector<double> gs_dmc_err={0,0,0,0};
@@ -766,7 +767,8 @@ void getSyst(small_tree_rpv &tree, TString variations, TString year, TFile *f, T
       if(abs(tree.jets_eta().at(j))>2.4) continue;
       if(tree.jets_csv().at(j)>0.8484) nb_csv++;
     }
-*//*
+*/
+/*
     int loose_lep(0), loose_els(0), loose_mus(0);
     for(unsigned int ie=0; ie<tree.els_pt().size(); ie++){
       if(tree.els_pt().at(ie)<20) continue;
@@ -788,7 +790,8 @@ void getSyst(small_tree_rpv &tree, TString variations, TString year, TFile *f, T
     }
 */
     // qcd jet flavor central weights
-    /* if(procname=="qcd") 
+/*
+	if(procname=="qcd") 
        { 
        int n_bflavor=0;
        int n_cflavor=0;
@@ -814,7 +817,8 @@ void getSyst(small_tree_rpv &tree, TString variations, TString year, TFile *f, T
     { 
     nominalweight = nominalweight*lflavorValCentral;
     }
-    }*/
+    }
+*/
 
     //
     // Now assign up and down weights
